@@ -1,7 +1,18 @@
-<html>
+<html ng-app="MainApp">
 	<head>
-	</head>
-	<body>
-		<h1>Hello World!</h1>
-	</body>
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="../app/app.js"></script>
+
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+
+    <div>
+      <p>Name : <input type="text" ng-model="name"></p>
+      <h1>Hello {{ name }} </h1>
+    </div>
+
+    <div ng-view></div>
+
+  </body>
 </html>

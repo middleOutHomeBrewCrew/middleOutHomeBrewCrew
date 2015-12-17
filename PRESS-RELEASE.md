@@ -17,28 +17,28 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  Social Flix
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  Feel closer to friends and family from thousands of miles of way.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  Expand your living room by watching your favorite shows and movies with anyone you want, distance is not an issue. No more syncing shows on your own. Social flix does it for you.
 
 ## Problem ##
-  > Describe the problem your product solves.
+  Long distance relationships are hard for everyone, family, friends and more.  The way we watch television is changing and syncing seperate machines to watch the same shows at once can be challenging.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  Social Flix aims to give each viewer a synchronous viewing experience with one another, making distance a problem of the past.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  "We as human beings have always loved to share experiences. Social flix allows users to share the same experience from wherever they are." -Spiderman
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  Go to www.socialflix.com. Load a youTube video of your choice. Invite your friends with your socialflix.com link, and watch.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  "I was on a trip and wanted to A Charlie Brown Christmas with my Mom. www.socialflix.com helped make that happen."
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  We hope you enjoy your user experience with your friends and family. Go to www.socialflix.com and start viewing now.

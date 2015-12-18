@@ -1,6 +1,6 @@
 <div ng-controller='MainController'>
 <!-- <head> -->
-	<style>
+<!--	<style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font: 13px Helvetica, Arial; }
       form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
@@ -9,9 +9,29 @@
       #messages { list-style-type: none; margin: 0; padding: 0; }
       #messages li { padding: 5px 10px; }
       #messages li:nth-child(odd) { background: #eee; }
-    </style>
+    </style> -->
 <!-- </head> -->
 	<!-- <body> -->
+
+
+
+    <div ng-controller="MainController">
+      <p>Name : <input type="text" ng-model="name"></p>
+      <h1>Hello {{ name }} </h1>
+
+
+      <form ng-submit="urlSubmitter()">
+        <input type="text" placeholder="url goes here" ng-model="url">
+          <button>Submit</button>
+        </input>
+      </form>
+​
+      <!-- youtube player -->
+      <iframe class="ifm" width="400" height="300" ng-src="{{ createUrl(url) }}" frameborder="0" allowfullscreen></iframe>
+
+    </div>
+
+
 		<ul id="messages"></ul>
 	    <form action="">
 	    <input id="m" autocomplete="off" /><button>Send</button>

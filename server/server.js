@@ -9,6 +9,10 @@ app.use(express.static(__dirname + './../client'));
 // 	res.render('index');
 // });
 
+app.get('/', function(req, res) {
+    res.sendFile(path.join('/index.html'));
+});
+
 socketServer.listen((process.env.PORT || 3000), function() {
   var host = socketServer.address().address;
   var port = socketServer.address().port;

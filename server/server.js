@@ -3,10 +3,7 @@ var app = express();
 var socketServer = require('http').createServer(app);
 var io = require('socket.io')(socketServer);
 
-socketServer.listen(3000);
-
 app.use(express.static(__dirname + './../client'));
-
 
 // app.get('/', function(req,res) {
 // 	res.render('index');

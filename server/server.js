@@ -19,6 +19,7 @@ socketServer.listen((process.env.PORT || 3000), function() {
   console.log('App launched and hosting at http://%s:%s',host,port);
 });
 
+// create socket.io connection
 io.on('connection', function(socket){
   console.log('a user connected');
   socket.on('disconnect', function(){

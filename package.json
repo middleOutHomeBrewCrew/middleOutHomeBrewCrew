@@ -13,6 +13,7 @@
   "author": "tehhomebrew",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.4.8",
     "express": "^4.13.3",
     "socket.io": "^1.3.7"
   }

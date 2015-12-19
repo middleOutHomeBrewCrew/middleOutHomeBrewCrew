@@ -1,6 +1,6 @@
 <html ng-app="MainApp">
 	<head>
-
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/simplex/bootstrap.min.css">
   </head>
 
   <body>
@@ -9,6 +9,15 @@
     <div ng-controller="MainController">
       <p>Name : <input type="text" ng-model="name"></p>
       <h1>Hello {{ name }} </h1>
+
+      <form ng-submit="urlSubmitter()">
+        <input type="text" placeholder="url goes here" ng-model="url">
+          <button>Submit</button>
+        </input>
+      </form>
+
+      <!-- youtube player -->
+      <iframe class="ifm" width="400" height="300" ng-src="{{ createUrl(url) }}" frameborder="0" allowfullscreen></iframe>
     </div>
 
     <div ng-view></div>

@@ -4,11 +4,11 @@
   </head>
 
   <body>
+
     <h1><b>Social<span style='color:#3b5998'>Flix</span></b></h1>
 
     <div ng-controller="MainController">
-      <!-- <p>Name : <input type="text" ng-model="name"></p>
-      <h1>Hello {{ name }} </h1> -->
+
       <br>
       <form ng-submit="urlSubmitter()">
         <input type="text" placeholder="url goes here" ng-model="url">
@@ -19,6 +19,7 @@
       <!-- youtube player -->
       <iframe class="ifm" width="400" height="300" ng-src="{{ createUrl(url) }}" frameborder="0" allowfullscreen></iframe>
     </div>
+
 
     <div ng-view></div>
     

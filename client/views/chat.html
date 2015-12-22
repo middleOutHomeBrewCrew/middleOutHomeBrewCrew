@@ -1,47 +1,8 @@
-<div ng-controller='MainController'>
-<!-- <head> -->
-
-	<style>
-      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 2px; }*/
-      #m { width:400px; height:25px; }
-      #messages { list-style-type: none; margin: 0; padding: 0; width:400px; height:200px; overflow: auto; float: initial;}
-      #messages li { padding: 5px 10px; }
-      #messages li:nth-child(odd) { background: #eee; }
-
-    </style>
-
-
-    <div ng-controller="MainController">
-      <p>Name : <input type="text" ng-model="name"></p>
-      <h1>Hello {{ name }} </h1>
-
-
-      <form ng-submit="urlSubmitter()">
-        <input type="text" placeholder="url goes here" ng-model="url">
-          <button>Submit</button>
-        </input>
-      </form>
-​
-      <!-- youtube player -->
-      <iframe class="ifm" width="400" height="300" ng-src="{{ createUrl(url) }}" frameborder="0" allowfullscreen></iframe>
-
-    </div>
-
-
->>>>>>> origin/dev
-		<ul id="messages"></ul>
-	    <form action="">
-	    <input id="m" autocomplete="off" /><button>Send</button>
-	    </form>
-		<script>
-		  var socket = io();
-		  $('form').submit(function(){
-		    socket.emit('chat message', $('#m').val());
-		    $('#m').val('');
-		    return false;
-		  });
-		  socket.on('chat message', function(msg){
-		    $('#messages').append($('<li>').text(msg));
-		  });
-		</script>
+<!-- message container -->
+<div>
+<ul id="messages"></ul>
+  <form action="">
+	  <input id="m" autocomplete="off" /><button>Send</button>
+  </form>
+ <script src='/app/chat.js'></script>
 </div>

@@ -1,16 +1,30 @@
 <html ng-app="MainApp">
 	<head>
-
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/simplex/bootstrap.min.css">
   </head>
 
   <body>
-    <h1>Social Flix</h1>
+
+    <h1><b>Social<span style='color:#3b5998'>Flix</span></b></h1>
+
+    <div ng-controller="MainController">
+
+      <br>
+      <form ng-submit="urlSubmitter()">
+        <input type="text" placeholder="url goes here" ng-model="url">
+          <button>Submit</button>
+        </input>
+      </form>
+
+      <!-- youtube player -->
+      <iframe class="ifm" width="400" height="300" ng-src="{{ createUrl(url) }}" frameborder="0" allowfullscreen></iframe>
+    </div>
 
 
     <div ng-view></div>
     
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-route.min.js"></script>
     <script src="app/app.js"></script>

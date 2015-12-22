@@ -5,10 +5,6 @@ var io = require('socket.io')(socketServer);
 
 app.use(express.static(__dirname + './../client'));
 
-// app.get('/', function(req,res) {
-// 	res.render('index');
-// });
-
 app.get('/', function(req, res) {
     res.sendFile(path.join('/index.html'));
 });
@@ -30,11 +26,10 @@ io.on('connection', function(socket){
     io.emit('chat message', msg);
     console.log('message: ' + msg);
   });
+  socket.on('url submit', function(url){
+    io.emit('url submit', url);
+    console.log('url: server', url);
+  });
 });
 
-// var server = app.listen((process.env.PORT || 3000), function() {
-//   var host = server.address().address;
-//   var port = server.address().port;
 
-//   console.log('App launched and hosting at http://%s:%s',host,port);
-// });

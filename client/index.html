@@ -1,11 +1,12 @@
 <html ng-app="MainApp">
 	<head>
     <link rel="stylesheet" type="text/css" href="https://bootswatch.com/simplex/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
   </head>
 
   <body>
 
-    <h1><b>Social<span style='color:#3b5998'>Flix</span></b></h1>
+    <h1><b>Social<span id='flixHeader'>Flix</span></b></h1>
 
     <div ng-controller="MainController">
 
@@ -17,7 +18,7 @@
       </form>
 
       <!-- youtube player -->
-      <iframe class="ifm" width="400" height="300" ng-src="{{ createUrl(url) }}" frameborder="0" allowfullscreen></iframe>
+      <iframe class="ifm" ng-src="{{ createUrl(url) }}" frameborder="0" allowfullscreen></iframe>
     </div>
 
 

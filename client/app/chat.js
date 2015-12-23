@@ -16,6 +16,6 @@ $('#url').val('');
 socket.on('url submit', function(url){
   //set remote urls
   console.log('url submit 18 :', url);
-  $('.ifm').attr('src', 'https://www.youtube.com/embed/' + url + '?autoplay=1');
+  new YT.Player('player', {videoId: url});
 });
 

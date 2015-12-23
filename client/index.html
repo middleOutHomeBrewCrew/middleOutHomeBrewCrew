@@ -17,8 +17,13 @@
         </input>
       </form>
 
-      <!-- youtube player -->
-      <iframe class="ifm" ng-src="{{ createUrl(url) }}" frameborder="0" allowfullscreen></iframe>
+      <!-- iframe player -->
+      <!-- <iframe class="ifm" ng-src="{{ createUrl(url) }}" frameborder="0" allowfullscreen></iframe> -->
+
+      <!-- YT API player -->
+      <div id='player'></div>
+      <button ng-click="playVideo();">Play Video</button> 
+      <button ng-click="pauseVideo();">Pause Video</button> 
     </div>
 
 

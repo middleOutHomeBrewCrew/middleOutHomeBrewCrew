@@ -22,8 +22,11 @@ app.controller("MainController", function($scope, $sce){
   }
 
   $scope.playVideo = function() {
-    console.log("play video")
     $scope.player.playVideo();
+  }
+
+  $scope.pauseVideo = function() {
+    $scope.player.pauseVideo();
   }
 });
 

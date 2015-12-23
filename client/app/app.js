@@ -8,8 +8,8 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 app.controller("MainController", function($scope, $sce){
   $scope.message = "Hello World";
 
-  $scope.urlSubmitter = function(){
-    var url = $scope.url;
+  $scope.urlSubmitter = function(option){
+    url = option || $scope.url;
     url = url.slice(32);
     $scope.url = url;
     $scope.player = new YT.Player('player', {

@@ -15,6 +15,17 @@ nav {
 	z-index: 1;
 }
 
+#homeJumbo {
+	text-align: center;
+	margin: 0;
+	position: static;
+	background-color:rgba(0, 0, 0, 0.5);
+}
+
+#jumboh1 {
+	color: white;
+}
+
 
 #wall_1 {
 	background: url(../../assets/Movies.jpg) repeat;

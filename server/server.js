@@ -30,6 +30,12 @@ io.on('connection', function(socket){
     io.emit('url submit', url);
     console.log('url: server', url);
   });
+  socket.on('play video', function(){
+    io.emit('play video')
+  });
+  socket.on('pause video', function(){
+    io.emit('pause video')
+  });
 });
 
 

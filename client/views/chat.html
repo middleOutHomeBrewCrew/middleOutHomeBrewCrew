@@ -1,8 +1,10 @@
 <!-- message container -->
-<div>
-<ul id="messages"></ul>
+<div id='messageDiv'>
+
   <form id='chatForm' action="">
-	  <input id="m" autocomplete="off" /><button>Send</button>
+	  <input id="m" autocomplete="off" />
+	  <button class="btn btn-primary">Send</button>
   </form>
+  <ul id="messages" class='list-group'></ul>
  <script src='/app/chat.js'></script>
 </div>

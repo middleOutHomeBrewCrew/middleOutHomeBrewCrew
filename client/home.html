@@ -1,53 +1,72 @@
-<!DOCTYPE html>
-<html>
+<html ng-app="MainApp">
 	<head>
-		<title>...flix</title>
-		<link rel="stylesheet" type="text/css" href="https://bootswatch.com/simplex/bootstrap.min.css">
-		<link rel="stylesheet" href="styles/homeStyles.css">
-	</head>
-	<body>
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/simplex/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
 
-	<nav class="navbar navbar-inverse navbar-fixed-top" style='margin: 0'>
-	  <div class="container-fluid">
-
-
-	    <!-- Collect the nav links, forms, and other content for toggling -->
-	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="#">Login</a></li>
-	        <li><a href="#">Sign Up</a></li>
-	      </ul>
-	      <ul class="nav navbar-nav navbar-right">
-	        <a class="navbar-brand" href="#">...flix</a>
-	      </ul>
-	    </div><!-- /.navbar-collapse -->
-	  </div><!-- /.container-fluid -->
-	</nav>
+  <body id='indexBody'>
+  <!-- navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" style='margin: 0'>
+      <div class="container-fluid">
 
 
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Login</a></li>
+            <li><a href="#">Sign Up</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <a class="navbar-brand" href="#">...flix</a>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <br>
+    <br>
+
+    <div ng-controller="MainController">
+
+      <br>
+      <form id='urlID' ng-submit="urlSubmitter()">
+        <input id='url' type="text" placeholder="url goes here" ng-model="url">
+          <button class="btn btn-primary">Submit</button>
+        </input>
+      </form>
+
+      <!-- YT API player -->
+      <div id='player'></div>
+      <br>
+      <br>
+      <button id="playVid" ng-click="playVideo();" class="btn btn-primary">Play Video</button> 
+      <button id="pauseVid" ng-click="pauseVideo();" class="btn btn-primary">Pause Video</button> 
+    </div>
+
+<!-- 
+    <div ng-view></div> -->
+
+    <!-- message container -->
+    <div id='messageDiv'>
+
+      <form id='chatForm' action="">
+        <input id="m" autocomplete="off" />
+        <button class="btn btn-primary">Send</button>
+      </form>
+      <ul id="messages" class='list-group'></ul>
+    </div>
 
 
 
-	  <div id='wall_1' class='wallImage'>
-	  	
-		<div id='homeJumbo' class="jumbotron">
-		  <h1 id="jumboh1">Welcome to the world of synchronicity</h1>
-		  <p>Watch together. Wherever.</p>
-		  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-		</div>
-
-	  </div>
-	   
-	    <h1 id='wall1h1'>'IT'S LIKE A REALLY BIG ASS LIVING ROOM' - Bob customer</h1>
-
-	  <div id='wall_2' class='wallImage'></div>
+    
+    
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-route.min.js"></script>
+    <script src="app/app.js"></script>
+     <script src='/app/chat.js'></script>
 
 
-
-
-
-
-	   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-
-	</body>
+  </body>
 </html>

@@ -2,11 +2,16 @@ var express = require('express');
 var app = express();
 var socketServer = require('http').createServer(app);
 var io = require('socket.io')(socketServer);
+var path = require('path');
 
 app.use(express.static(__dirname + './../client'));
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join('/index.html'));
+    res.sendFile(path.join(__dirname + '/index.html'));
+});
+
+app.get('/home', function(req, res) {
+    res.sendFile(path.join(__dirname + './../client/home.html'));
 });
 
 socketServer.listen((process.env.PORT || 3000), function() {

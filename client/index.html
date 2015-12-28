@@ -4,21 +4,43 @@
     <link rel="stylesheet" href="styles/style.css">
   </head>
 
-  <body>
+  <body id='indexBody'>
+  <!-- navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" style='margin: 0'>
+      <div class="container-fluid">
 
-    <h1><b>Social<span id='flixHeader'>Flix</span></b></h1>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Login</a></li>
+            <li><a href="#">Sign Up</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <a class="navbar-brand" href="#">...flix</a>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <br>
+    <br>
 
     <div ng-controller="MainController">
 
       <br>
       <form id='urlID' ng-submit="urlSubmitter()">
         <input id='url' type="text" placeholder="url goes here" ng-model="url">
-          <button>Submit</button>
+          <button class="btn btn-primary">Submit</button>
         </input>
       </form>
 
-      <!-- youtube player -->
-      <iframe class="ifm" ng-src="{{ createUrl(url) }}" frameborder="0" allowfullscreen></iframe>
+      <!-- YT API player -->
+      <div id='player'></div>
+      <br>
+      <br>
+      <button id="playVid" ng-click="playVideo();" class="btn btn-primary">Play Video</button> 
+      <button id="pauseVid" ng-click="pauseVideo();" class="btn btn-primary">Pause Video</button> 
     </div>
 
 

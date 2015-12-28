@@ -14,6 +14,14 @@ app.get('/home', function(req, res) {
     res.sendFile(path.join(__dirname + './../client/home.html'));
 });
 
+app.get('/login', function(req, res) {
+    res.sendFile(path.join(__dirname + './../client/login.html'));
+});
+
+app.get('/signup', function(req, res) {
+    res.sendFile(path.join(__dirname + './../client/signup.html'));
+});
+
 socketServer.listen((process.env.PORT || 3000), function() {
   var host = socketServer.address().address;
   var port = socketServer.address().port;

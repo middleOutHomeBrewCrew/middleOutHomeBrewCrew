@@ -26,9 +26,8 @@ nav {
 	color: white;
 }
 
-
 #wall_1 {
-	background: url(../../assets/Movies.jpg) repeat;
+	background: url(../../assets/background-image.jpg) repeat;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -42,7 +41,7 @@ nav {
 }
 
 #wall_2 {
-	background: url(../../assets/background-image.jpg) repeat;
+	background: url(../../assets/Movies.jpg) repeat;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-position: center;

@@ -30,9 +30,9 @@ app.controller("MainController", function($scope, $sce){
   }
 });
 
-app.config(function($routeProvider) {
-  $routeProvider.when('/', {
-    templateUrl: '../views/chat.html',
-    controller: 'MainController'
-  })
-})
+// app.config(function($routeProvider) {
+//   $routeProvider.when('/', {
+//     templateUrl: '../views/chat.html',
+//     controller: 'MainController'
+//   })
+// })

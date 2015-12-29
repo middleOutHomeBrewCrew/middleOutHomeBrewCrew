@@ -31,6 +31,11 @@ socketServer.listen((process.env.PORT || 3000), function() {
 
 // create socket.io connection
 io.on('connection', function(socket){
+  //start 
+  io.emit('new connection')
+  socket.on('new connection res', function(obj){
+    io.emit('new connection res', obj);
+  });
   console.log('a user connected');
   socket.on('disconnect', function(){
     console.log('user disconnected');

@@ -4,7 +4,9 @@ var socket = io();
 $('#chatForm').hide();
 $('#room').hide();
 $('#name').focus();
-$('#urlID').hide();
+$('#player').hide();
+$('#url').prop('disabled',true);
+$('#urlSub').prop('disabled',true);
 
 //emit message to other sockets
 $('#chatForm').submit(function(){
@@ -38,8 +40,10 @@ $('#join').click(function() {
 		$('#chatForm').show();
 		$('#room').show();
 		$('#m').focus();
-		$('#urlID').show();
+		$('#player').show();
 		$('#joinChat').hide();
+		$('#url').prop('disabled',false);
+		$('#urlSub').prop('disabled',false);
 	}
 });
 
@@ -88,7 +92,7 @@ $('#urlID').submit(function() {
 //sockets to work on
 socket.on('url submit', function(url){
 	var player = new YT.Player('player', {
-    	videoId : url.slice(32);
+    	videoId : url.slice(32)
 	});
   socket.player = player;
 });

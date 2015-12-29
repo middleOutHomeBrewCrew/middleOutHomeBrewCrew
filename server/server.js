@@ -2,15 +2,24 @@ var express = require('express');
 var app = express();
 var socketServer = require('http').createServer(app);
 var io = require('socket.io')(socketServer);
+var path = require('path');
 
 app.use(express.static(__dirname + './../client'));
 
-// app.get('/', function(req,res) {
-// 	res.render('index');
-// });
-
 app.get('/', function(req, res) {
-    res.sendFile(path.join('/index.html'));
+    res.sendFile(path.join(__dirname + '/index.html'));
+});
+
+app.get('/home', function(req, res) {
+    res.sendFile(path.join(__dirname + './../client/home.html'));
+});
+
+app.get('/login', function(req, res) {
+    res.sendFile(path.join(__dirname + './../client/login.html'));
+});
+
+app.get('/signup', function(req, res) {
+    res.sendFile(path.join(__dirname + './../client/signup.html'));
 });
 
 socketServer.listen((process.env.PORT || 3000), function() {
@@ -30,11 +39,16 @@ io.on('connection', function(socket){
     io.emit('chat message', msg);
     console.log('message: ' + msg);
   });
+  socket.on('url submit', function(url){
+    io.emit('url submit', url);
+    console.log('url: server', url);
+  });
+  socket.on('play video', function(){
+    io.emit('play video')
+  });
+  socket.on('pause video', function(){
+    io.emit('pause video')
+  });
 });
 
-// var server = app.listen((process.env.PORT || 3000), function() {
-//   var host = server.address().address;
-//   var port = server.address().port;
 
-//   console.log('App launched and hosting at http://%s:%s',host,port);
-// });

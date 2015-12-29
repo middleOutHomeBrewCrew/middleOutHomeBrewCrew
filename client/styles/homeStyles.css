@@ -1,0 +1,48 @@
+* {
+	margin: 0;
+	padding: 0;
+
+}
+
+nav {
+	margin: 0;
+}
+
+.wallImage {
+	height: 750px;
+	width: 100%;
+	background: #55e6c5;
+	z-index: 1;
+}
+
+#homeJumbo {
+	text-align: center;
+	margin: 0;
+	position: static;
+	background-color:rgba(0, 0, 0, 0.5);
+}
+
+#jumboh1 {
+	color: white;
+}
+
+#wall_1 {
+	background: url(../../assets/background-image.jpg) repeat;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#wall1h1 {
+	text-align: center;
+	color: white;
+	background-color: red;
+	margin: 0;
+}
+
+#wall_2 {
+	background: url(../../assets/Movies.jpg) repeat;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;
+}

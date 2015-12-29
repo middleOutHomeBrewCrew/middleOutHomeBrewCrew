@@ -1,0 +1,30 @@
+
+*/
+#m { 
+	width:400px; 
+	height:25px; 
+}
+#messages { 
+	list-style-type: none; 
+	margin: 0; 
+	padding: 0; 
+	width:250px; 
+	height:200px; 
+	overflow: auto; 
+	float: right;
+}
+#messages li { 
+	padding: 5px 10px; 
+}
+#messages li:nth-child(odd) { 
+	background: #eee; 
+}
+
+#indexBody {
+	background-color: #fff4e6;
+}
+
+#messageDiv {
+	float: right;
+	border: 1px;
+}

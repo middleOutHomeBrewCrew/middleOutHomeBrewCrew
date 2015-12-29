@@ -1,9 +1,9 @@
 
-*/
 #m { 
 	width:400px; 
 	height:25px; 
 }
+
 #messages { 
 	list-style-type: none; 
 	margin: 0; 
@@ -13,9 +13,11 @@
 	overflow: auto; 
 	float: right;
 }
+
 #messages li { 
 	padding: 5px 10px; 
 }
+
 #messages li:nth-child(odd) { 
 	background: #eee; 
 }
@@ -27,4 +29,13 @@
 #messageDiv {
 	float: right;
 	border: 1px;
+}
+
+#url {
+	width: 300px;
+}
+
+.ifm {
+	width: 400; 
+	height: 300;
 }

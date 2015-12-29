@@ -1,4 +1,8 @@
 var socket = io();
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 // chat Socket
 //emit message to other sockets
 $('#chatForm').submit(function(){
@@ -26,7 +30,7 @@ socket.on('url submit', function(url){
     videoId : url
   });
   socket.player = player;
-  socket.url = url;
+  socket.url = url.slice(32);
 });
 
 //play video event
@@ -44,4 +48,24 @@ $('#pauseVid').on('click', function(){
 });
 socket.on('pause video', function(){
   socket.player.pauseVideo();
-})
+});
+
+socket.on('new connection', function (){
+  if(!socket.player){
+    return;
+  }
+  socket.emit('new connection res', {
+    url: socket.url,
+    time: socket.player.getCurrentTime()
+  });
+});
+
+socket.on('new connection res', function(obj) { 
+  setTimeout( 
+    function(){
+      var player = new YT.Player('player', { videoId: obj.url });
+      if(!socket.player) {
+        socket.player = player;
+      }
+    },30);
+});

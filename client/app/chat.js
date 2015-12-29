@@ -25,12 +25,16 @@ $('#url').val('');
 // url Socket instantiate a youtube player for all
 //sockets to work on
 socket.on('url submit', function(url){
-  url = url.slice(32);
   var player = new YT.Player('player', {
-    videoId : url
+    videoId : url.slice(32),
+    playerVars: { 
+      'autoplay': 0, 
+      'controls': 0, 
+      'disablekb': 0
+    }
   });
   socket.player = player;
-  socket.url = url.slice(32);
+  socket.url = url.slice(32,43);
 });
 
 //play video event
@@ -60,12 +64,31 @@ socket.on('new connection', function (){
   });
 });
 
-socket.on('new connection res', function(obj) { 
+socket.on('new connection res', function(obj) {
+  var time = Math.floor(obj.time); 
   setTimeout( 
     function(){
-      var player = new YT.Player('player', { videoId: obj.url });
+      var player = new YT.Player('player', { 
+        videoId: obj.url,
+        playerVars: { 
+          'start': time,
+          'autoplay' : 1
+        } 
+      });
       if(!socket.player) {
         socket.player = player;
       }
-    },30);
+    },100);
 });
+
+function toggleMute() {
+  if(socket.player) {
+    socket.player.mute();
+  }
+}
+
+function unMuteVideo() {
+  if(socket.player) {
+    socket.player.unMute(); 
+  }  
+}

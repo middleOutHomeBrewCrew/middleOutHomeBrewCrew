@@ -21,10 +21,12 @@ $('#url').val('');
 // url Socket instantiate a youtube player for all
 //sockets to work on
 socket.on('url submit', function(url){
+  url = url.slice(32);
   var player = new YT.Player('player', {
-    videoId : url.slice(32)
+    videoId : url
   });
   socket.player = player;
+  socket.url = url;
 });
 
 //play video event
@@ -33,6 +35,7 @@ $('#playVid').on('click', function(){
 });
 socket.on('play video', function(){
   socket.player.playVideo();
+  console.log(socket.player.getCurrentTime(), socket.url);
 });
 
 //pause video event

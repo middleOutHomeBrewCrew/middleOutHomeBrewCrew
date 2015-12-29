@@ -28,3 +28,12 @@
 	float: right;
 	border: 1px;
 }
+
+.youtube-player { 
+	display: block; 
+	margin: 0 auto; 
+}
+
+#playVid #pauseVid {
+	float: right;
+}

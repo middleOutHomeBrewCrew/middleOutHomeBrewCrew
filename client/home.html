@@ -1,5 +1,5 @@
-<html >
-	<head>
+<html>
+  <head>
     <link rel="stylesheet" type="text/css" href="https://bootswatch.com/simplex/bootstrap.min.css">
     <link rel="stylesheet" href="styles/style.css">
   </head>
@@ -31,12 +31,12 @@
       <br>
       <form id='urlID'>
         <input id='url' type="text" placeholder="url goes here" ng-model="url">
-          <button class="btn btn-primary">Submit</button>
+          <button id='urlSub' class="btn btn-primary">Submit</button>
         </input>
       </form>
 
       <!-- YT API player -->
-      <div id='player'></div>
+    <div id='player'>
       <br>
       <br>
       <button id="playVid" ng-click="playVideo();" class="btn btn-primary">Play Video</button> 
@@ -49,6 +49,21 @@
     <!-- message container -->
     <div id='messageDiv'>
 
+      <div class="span5 offset2" id="login">
+      <form class="form-inline" id='joinChat'>
+          <h4>Enter a username:</h4>
+          <input type="text" class="input-small" placeholder="Your name" id="name">
+          <input type="button" name="join" id="join" value="Join">
+        </form>
+      </div>
+
+    <div id='room'>
+      <h4>Users:</h4>
+      <ul id="people" class="unstyled"></ul>
+      <h4><strong>Chatroom:</strong></h4>
+      <ul id="messages" class='list-group'></ul>
+    </div>
+
       <form id='chatForm' action="">
         <input id="m" autocomplete="off" />
         <button class="btn btn-primary">Send</button>
@@ -56,9 +71,6 @@
       <ul id="messages" class='list-group'></ul>
     </div>
 
-
-
-    
     
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>

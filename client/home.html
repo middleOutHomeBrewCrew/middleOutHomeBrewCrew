@@ -1,4 +1,4 @@
-<html ng-app="MainApp">
+<html >
 	<head>
     <link rel="stylesheet" type="text/css" href="https://bootswatch.com/simplex/bootstrap.min.css">
     <link rel="stylesheet" href="styles/style.css">
@@ -39,8 +39,10 @@
       <div id='player'></div>
       <br>
       <br>
-      <button id="playVid" ng-click="playVideo();" class="btn btn-primary">Play Video</button> 
-      <button id="pauseVid" ng-click="pauseVideo();" class="btn btn-primary">Pause Video</button> 
+      <button id="playVid" onclick="playVideo();" class="btn btn-primary">Play Video</button> 
+      <button id="pauseVid" onclick="pauseVideo();" class="btn btn-primary">Pause Video</button> 
+      <button id="playVid" onclick="toggleMute();" class="btn btn-primary">Mute Toggle</button> 
+      <button id="pauseVid" onclick="unMuteVideo();" class="btn btn-primary">UnMute Video</button> 
     </div>
 
 <!-- 

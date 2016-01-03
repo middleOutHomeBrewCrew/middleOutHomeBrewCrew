@@ -2,29 +2,52 @@
   Watch videos remotely with synchronicity. 
     
 ## Team ##
- - __Product Owner__: Yale Yuen
- - __Scrum Master__: Michael Berber
- - __Development Team Members__: Anthony Bibbs, Sergey Piterman
+ - __Product Owner__: [Yale Yuen](https://github.com/Ycube)
+ - __Scrum Master__: [Michael Berber](https://github.com/mickberber)
+ - __Development Team Members__: [Anthony Bibbs](https://github.com/abibbs), [Sergey Piterman](https://github.com/spiterman)
 
 ## Table of Contents
 
 1. [Summary](#summary)
+1. [Team](#team)
 1. [Usage](#usage)
+1. [Requirements](#requirements)
 1. [Contributing](#contributing)
+1. [Development](#development)
+  1. [Installing Dependencies](#installing-dependencies) 
 1. [Files](#files)
-  1. [index.html](#index)
-  1. [home.html](#home.html)
-  1. [chat.js](#chat)
-  1. [server.js](#server.js)
-  1. [app.js](#app.js)
+  1. index.html
+  1. home.html
+  1. chat.js
+  1. server.js
+  1. app.js
 
 
 ## Summary ##
 
   Expand your living room by watching your favorite shows and movies with anyone you want, distance is not an issue. No more syncing shows on your own. Social flix does it for you.  **this started as an angular app, but has evolved out of neccessity to use mainly jquery for ease of consrtuction, there may be some left over angular functionality that is included but not used (vestigial) **
 
+## Requirements ##
+- Express 4.13.x
+- Node 5.3.x
+- Socket.io 1.3.x
+
+## Usage ##
+  >Fill in later
+
 ## Contributing ##
 See [_CONTRIBUING.md](https://github.com/middleOutHomeBrewCrew/middleOutHomeBrewCrew/blob/master/_CONTRIBUTING.md) for contribution guidelines.
+
+## Development ##
+
+### Installing Dependencies
+
+From within the root directory:
+
+```sh
+sudo npm install npm -g
+npm install
+```
 
 ## Files ##
 

@@ -10,14 +10,21 @@
 
 1. [Summary](#summary)
 1. [Usage](#usage)
+1. [Contributing](#contributing)
 1. [Files](#files)
-  1. [index.html](#index.html)
+  1. [index.html](#index)
   1. [home.html](#home.html)
+  1. [chat.js](#chat)
+  1. [server.js](#server.js)
+  1. [app.js](#app.js)
 
 
 ## Summary ##
 
   Expand your living room by watching your favorite shows and movies with anyone you want, distance is not an issue. No more syncing shows on your own. Social flix does it for you.  **this started as an angular app, but has evolved out of neccessity to use mainly jquery for ease of consrtuction, there may be some left over angular functionality that is included but not used (vestigial) **
+
+## Contributing ##
+See [_CONTRIBUING.md](https://github.com/middleOutHomeBrewCrew/middleOutHomeBrewCrew/blob/master/_CONTRIBUTING.md) for contribution guidelines.
 
 ## Files ##
 

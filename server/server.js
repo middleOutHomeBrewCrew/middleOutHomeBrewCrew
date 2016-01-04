@@ -54,10 +54,12 @@ io.on('connection', function(socket){
 
   // log user disconnect to chat and update user list
   socket.on('disconnect', function(){
-    io.emit('update', people[socket.id] + ' has left the server.');
+    var temp = people[socket.id];
+    
+    io.emit('update', temp + ' has left the server.');
     delete people[socket.id];
     io.emit('update-people',people);
-    console.log(people[socket.id] || socket.id + ' has disconnected!');
+    console.log(temp + ' has disconnected!');
   });
   socket.on('url submit', function(url){
     io.emit('url submit', url);

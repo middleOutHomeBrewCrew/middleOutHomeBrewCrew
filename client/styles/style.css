@@ -1,23 +1,27 @@
 
 */
-#m { 
-	width:400px; 
-	height:25px; 
+#m {
+/*	width:400px;
+	height:25px;*/
+	width: 100%;
+	height: 100%;
 }
-#messages { 
-	list-style-type: none; 
-	margin: 0; 
-	padding: 0; 
-	width:250px; 
-	height:200px; 
-	overflow: auto; 
+#messages {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+/*	width:250px;
+	height:200px;*/
+	width: 100%;
+	height:100%;
+	overflow: auto;
 	float: right;
 }
-#messages li { 
-	padding: 5px 10px; 
+#messages li {
+	padding: 5px 10px;
 }
-#messages li:nth-child(odd) { 
-	background: #eee; 
+#messages li:nth-child(odd) {
+	background: #eee;
 }
 
 #indexBody {
@@ -27,5 +31,32 @@
 #messageDiv {
 	float: right;
 	border: 1px;
+}
+
+
+/*Begin My Changes*/
+
+* {
+    box-sizing: border-box;
+}
+
+.row:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+@media only screen and (max-width: 900px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+.videoPlayer {
+	padding: 5%;
+}
+.long{
+	width: 100%;
 }
 

@@ -25,8 +25,8 @@
 
     <br>
     <br>
-
-    <div ng-controller="MainController">
+  <div class="row">
+    <div ng-controller="MainController" class='col-sm-9 videoPlayer'>
 
       <br>
       <form id='urlID'>
@@ -42,16 +42,20 @@
       <br>
       <br>
 
-      <button id="playVid" onclick="playVideo();" class="btn btn-primary">Play Video</button> 
-      <button id="pauseVid" onclick="pauseVideo();" class="btn btn-primary">Pause Video</button> 
-      <button id="playVid" onclick="muteVideo();" class="btn btn-primary">Mute Video</button> 
-      <button id="pauseVid" onclick="unMuteVideo();" class="btn btn-primary">UnMute Video</button> 
-
+      <button id="playVid" onclick="playVideo();" class="btn btn-primary">Play Video</button>
+      <button id="pauseVid" onclick="pauseVideo();" class="btn btn-primary">Pause Video</button>
+      <button id="playVid" onclick="muteVideo();" class="btn btn-primary">Mute Video</button>
+      <button id="pauseVid" onclick="unMuteVideo();" class="btn btn-primary">UnMute Video</button>
+      <input id="volume" type="number" step="1" min="0" max="100" value="100">
     </div>
+
+<!--
+    <div ng-view></div> -->
 
 
     <!-- message container -->
-    <div id='messageDiv'>
+    <div id='messageDiv' class="col-sm-3">
+
 
       <div class="span5 offset2" id="login">
       <form class="form-inline" id='joinChat'>
@@ -61,24 +65,25 @@
         </form>
       </div>
 
+
+      <form id='chatForm' action="">
+        <input class="long" id="m" autocomplete="off" />
+        <button class="btn btn-primary long">Send</button>
+      </form>
+      <ul id="messages" class='list-group'></ul>
+
     <div id='room'>
       <h4>Users:</h4>
       <ul id="people" class="unstyled"></ul>
       <h4><strong>Chatroom:</strong></h4>
-      <ul id="messages" class='list-group'></ul>
+      <!-- <ul id="messages" class='list-group'></ul> -->
     </div>
 
-      <form id='chatForm' action="">
-        <input id="m" autocomplete="off" />
-        <button class="btn btn-primary">Send</button>
-      </form>
-      <ul id="messages" class='list-group'></ul>
     </div>
 
+  </div> <!-- row -->
 
 
-    
-    
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>

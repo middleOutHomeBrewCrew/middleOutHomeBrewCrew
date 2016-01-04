@@ -10,6 +10,7 @@ $('#chatForm').hide();
 $('#room').hide();
 $('#name').focus();
 $('#player').hide();
+$('#playerControls').hide();
 $('#url').prop('disabled',true);
 $('#urlSub').prop('disabled',true);
 
@@ -99,6 +100,7 @@ $('#join').click(function() {
     $('#room').show();
     $('#m').focus();
     $('#player').show();
+    $('#playerControls').show();
     $('#joinChat').hide();
     $('#url').prop('disabled',false);
     $('#urlSub').prop('disabled',false);

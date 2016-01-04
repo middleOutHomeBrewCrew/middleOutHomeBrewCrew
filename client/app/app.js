@@ -1,12 +1,14 @@
 function muteVideo() {
   if(socket.player) {
     socket.player.mute();
+    $('.mute').show();
   }
 }
 
 function unMuteVideo() {
   if(socket.player) {
-    socket.player.unMute(); 
+    socket.player.unMute();
+    $('.mute').hide(); 
   }  
 }
 

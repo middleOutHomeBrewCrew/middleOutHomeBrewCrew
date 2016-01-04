@@ -42,6 +42,7 @@ $('#playVid').on('click', function(){
 });
 socket.on('play video', function(){
   socket.player.playVideo();
+  console.log(socket.player.getCurrentTime(), socket.url);
 });
 
 //pause video event
@@ -117,6 +118,7 @@ $('#name').keypress(function(e) {
       $('#room').show();
       $('#m').focus();
       $('#player').show();
+      $('#playerControls').show();
       $('#joinChat').hide();
       $('#url').prop('disabled',false);
       $('#urlSub').prop('disabled',false);

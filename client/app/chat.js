@@ -41,6 +41,7 @@ $('#playVid').on('click', function(){
 });
 socket.on('play video', function(){
   socket.player.playVideo();
+  console.log(socket.player.getCurrentTime(), socket.url);
 });
 
 //pause video event

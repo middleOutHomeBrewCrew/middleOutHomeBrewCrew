@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>...flix</title>
+		<title>Social Flix</title>
 		<link rel="stylesheet" type="text/css" href="https://bootswatch.com/simplex/bootstrap.min.css">
-		<link rel="stylesheet" href="styles/homeStyles.css">
+		<!-- this should be changed to indexstyles -->
+		<link rel="stylesheet" href="styles/homeStyles.css"> 
 	</head>
 	<body>
 
@@ -14,11 +15,14 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="#">Login</a></li>
-	        <li><a href="#">Sign Up</a></li>
+	        <li class="active"><a href="/login">Login</a></li>
+	        <li><a href="/signup">Sign Up</a></li>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
-	        <a class="navbar-brand" href="/home">...flix</a>
+	        <a class="navbar-brand" href="/home">Social Flix
+	        <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
+
+	        </a>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
@@ -31,21 +35,18 @@
 	  <div id='wall_1' class='wallImage'>
 	  	
 		<div id='homeJumbo' class="jumbotron">
-		  <h1 id="jumboh1">Welcome to the world of synchronicity</h1>
+		  <h1 id="jumboh1">Now Showing Social Flix</h1>
 		  <p>Watch together. Wherever.</p>
+	  	<!-- <video id="demo" controls="controls" src="../../assets/demo.mov"></video>	   -->
+	  	<iframe id="demo" src="https://www.youtube.com/embed/DbmwzENcivA" frameborder="0" allowfullscreen></iframe>
 		  <p><a class="btn btn-primary btn-lg" href="/home" role="button">Watch Now</a></p>
 		</div>
 
 	  </div>
 	   
-	    <h1 id='wall1h1'>'IT'S LIKE A REALLY BIG ASS LIVING ROOM' - Bob customer</h1>
+	    <h1 id='wall1h1'>'IT'S LIKE A REALLY BIG VIRTUAL LIVING ROOM' - Bob customer</h1>
 
 	  <div id='wall_2' class='wallImage'></div>
-
-
-
-
-
 
 	   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 

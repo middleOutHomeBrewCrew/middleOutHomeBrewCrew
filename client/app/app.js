@@ -1,12 +1,14 @@
 function muteVideo() {
   if(socket.player) {
     socket.player.mute();
+    $('#volume').after("<div class='mute'> <img id='muteImg' src='../assets/mute.png'> </div>");
   }
 }
 
 function unMuteVideo() {
   if(socket.player) {
-    socket.player.unMute(); 
+    socket.player.unMute();
+    $('.mute').remove(); 
   }  
 }
 

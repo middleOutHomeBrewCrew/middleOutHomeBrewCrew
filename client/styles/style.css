@@ -28,13 +28,11 @@
 }
 
 #messageDiv {
-	/*float: right;*/
 	border-left: 1px solid black;
 	padding: 5%;
 	height: 100%;
 }
 
-/*Begin Sergey's Changes*/
 
 * {
     box-sizing: border-box;
@@ -53,6 +51,7 @@
 .long{
 	width: 100%;
 }
+
     /* For mobile phones: */
 @media only screen and (max-width: 900px) {
     [class*="col-"] {

@@ -46,3 +46,8 @@ nav {
 	background-repeat: no-repeat;
 	background-position: center;
 }
+
+#demo {
+	width: 700px;
+	height: 420px;
+}

@@ -29,10 +29,10 @@
 }
 
 #messageDiv {
-	/*float: right;*/
-	border-left: 1px solid black;
-	padding: 5%;
+	float: right;
+	border: 1px;
 }
+
 
 /*Begin My Changes*/
 
@@ -59,3 +59,4 @@
 .long{
 	width: 100%;
 }
+

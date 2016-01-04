@@ -1,8 +1,6 @@
 
 */
 #m {
-/*	width:400px;
-	height:25px;*/
 	width: 100%;
 	height: 100%;
 }
@@ -10,10 +8,11 @@
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-/*	width:250px;
-	height:200px;*/
 	width: 100%;
-	height:100%;
+	max-height: 75%;
+	min-height: 75%;
+	/*We just want a max height specified*/
+	/*This is so the messages start internal scrolling*/
 	overflow: auto;
 	float: right;
 }
@@ -32,12 +31,14 @@
 	/*float: right;*/
 	border-left: 1px solid black;
 	padding: 5%;
+	height: 100%;
 }
 
-/*Begin My Changes*/
+/*Begin Sergey's Changes*/
 
 * {
     box-sizing: border-box;
+
 }
 
 .row:after {
@@ -46,16 +47,16 @@
     display: block;
 }
 
-@media only screen and (max-width: 900px) {
-    /* For mobile phones: */
-    [class*="col-"] {
-        width: 100%;
-    }
-}
-
 .videoPlayer {
 	padding: 5%;
 }
 .long{
 	width: 100%;
 }
+    /* For mobile phones: */
+@media only screen and (max-width: 900px) {
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+

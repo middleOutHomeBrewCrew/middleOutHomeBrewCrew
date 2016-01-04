@@ -10,6 +10,7 @@ $('#chatForm').hide();
 $('#room').hide();
 $('#name').focus();
 $('#player').hide();
+$('#playerControls').hide();
 $('#url').prop('disabled',true);
 $('#urlSub').prop('disabled',true);
 
@@ -100,6 +101,7 @@ $('#join').click(function() {
     $('#room').show();
     $('#m').focus();
     $('#player').show();
+    $('#playerControls').show();
     $('#joinChat').hide();
     $('#url').prop('disabled',false);
     $('#urlSub').prop('disabled',false);
@@ -107,11 +109,20 @@ $('#join').click(function() {
 });
 
 $('#name').keypress(function(e) {
-  if (e.which === 13) {
+  if (e.which == 13) {
     var name = $('#name').val();
     if (name != '') {
-      socket.emit('join',name);
+      socket.emit('join', name);
       ready = true;
+      $('#chatForm').show();
+      $('#room').show();
+      $('#m').focus();
+      $('#player').show();
+      $('#playerControls').show();
+      $('#joinChat').hide();
+      $('#url').prop('disabled',false);
+      $('#urlSub').prop('disabled',false);
+      return false;
     }
   }
 });
@@ -139,3 +150,9 @@ socket.on('chat message', function(who,msg){
     $('#messages').append($('<li>').text(who + ': ' + msg));
   }
 });
+
+// Autoscroll chat
+window.setInterval(function() {
+  var elem = document.getElementById('messages');
+  elem.scrollTop = elem.scrollHeight;
+}, 5000);

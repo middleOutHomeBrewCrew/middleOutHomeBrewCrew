@@ -106,11 +106,19 @@ $('#join').click(function() {
 });
 
 $('#name').keypress(function(e) {
-  if (e.which === 13) {
+  if (e.which == 13) {
     var name = $('#name').val();
     if (name != '') {
-      socket.emit('join',name);
+      socket.emit('join', name);
       ready = true;
+      $('#chatForm').show();
+      $('#room').show();
+      $('#m').focus();
+      $('#player').show();
+      $('#joinChat').hide();
+      $('#url').prop('disabled',false);
+      $('#urlSub').prop('disabled',false);
+      return false;
     }
   }
 });

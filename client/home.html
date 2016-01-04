@@ -2,6 +2,7 @@
 	<head>
     <link rel="stylesheet" type="text/css" href="https://bootswatch.com/simplex/bootstrap.min.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/appStyle.css">
   </head>
 
   <body id='indexBody'>
@@ -13,18 +14,20 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Login</a></li>
-            <li><a href="#">Sign Up</a></li>
+            <li class="active"><a href="/login">Login</a></li>
+            <li><a href="/signup">Sign Up</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <a class="navbar-brand" href="/home">...flix</a>
+            <a class="navbar-brand" href="/home">
+            Social Flix
+            <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
+            </a>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
 
-    <br>
-    <br>
+
   <div class="row">
     <div ng-controller="MainController" class='col-sm-9 videoPlayer'>
 
@@ -33,20 +36,25 @@
         <input id='url' type="text" placeholder="url goes here" ng-model="url">
           <button class="btn btn-primary">Submit</button>
         </input>
+
       </form>
+
+
+      <!-- Control Buttons -->
+      <button id="playVid" onclick="playVideo();" class="btn btn-primary">Play Video</button>
+      <button id="pauseVid" onclick="pauseVideo();" class="btn btn-primary">Pause Video</button>
+      <button id="muteVid" onclick="muteVideo();" class="btn btn-primary">Mute Video</button>
+      <button id="unmuteVid" onclick="unMuteVideo();" class="btn btn-primary">UnMute Video</button>
+      <input id="volume" type="number" step="1" min="0" max="100" value="100">
+      <br>
+      <br>
 
 
       <!-- YT API player -->
       <div class='youtube-player'id='player'></div>
 
-      <br>
-      <br>
 
-      <button id="playVid" onclick="playVideo();" class="btn btn-primary">Play Video</button>
-      <button id="pauseVid" onclick="pauseVideo();" class="btn btn-primary">Pause Video</button>
-      <button id="playVid" onclick="muteVideo();" class="btn btn-primary">Mute Video</button>
-      <button id="pauseVid" onclick="unMuteVideo();" class="btn btn-primary">UnMute Video</button>
-      <input id="volume" type="number" step="1" min="0" max="100" value="100">
+
     </div>
 
 
@@ -60,20 +68,21 @@
     </div>
 
       <div class="span5 offset2" id="login">
-      <form class="form-inline" id='joinChat'>
+        <form class="form-inline" id='joinChat'>
           <h4>Enter a username:</h4>
           <input type="text" class="input-small" placeholder="Your name" id="name">
           <input type="button" name="join" id="join" value="Join">
         </form>
       </div>
 
+      <div>
+        <ul id="messages" class='list-group'></ul>
+      </div>
 
       <form id='chatForm' action="">
         <input class="long" id="m" autocomplete="off" />
         <button class="btn btn-primary long">Send</button>
       </form>
-      <ul id="messages" class='list-group'></ul>
-
 
     </div> <!-- message div -->
 

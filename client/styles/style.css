@@ -4,8 +4,16 @@
 	width: 100%;
 	height: 100%;
 }
+
+#room {
+	color: #000000;
+	font-family: verdana;
+}
+
 #messages {
 	list-style-type: none;
+	color: #000000;
+	font-family: verdana;
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -20,7 +28,7 @@
 	padding: 5px 10px;
 }
 #messages li:nth-child(odd) {
-	background: #eee;
+	background: #FAEBD7;
 }
 
 #indexBody {

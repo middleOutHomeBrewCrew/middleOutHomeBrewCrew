@@ -45,7 +45,7 @@ nav {
 	background: url(../../assets/Movies.jpg) repeat;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: right;
 }
 
 #demo {
@@ -53,8 +53,16 @@ nav {
 	height: 420px;
 }
 
-#wallInfo {
-	width: 500px;
-	height: 300px;
-	margin-top: 50%;
+.info {
+    padding: 8%;
+    background-color: #ffffff;
+    margin: 5%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px gray;
+    border: 2px solid gray;
+    text-align: center;
+}
+
+#offer{
+  font-size: 15px;
 }

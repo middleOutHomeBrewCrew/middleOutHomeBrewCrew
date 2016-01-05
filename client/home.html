@@ -1,8 +1,7 @@
 <html >
 	<head>
     <link rel="stylesheet" type="text/css" href="https://bootswatch.com/simplex/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/appStyle.css">
+    <link rel="stylesheet" href="styles/homeStyle.css">
   </head>
 
   <body id='indexBody'>
@@ -18,7 +17,7 @@
             <li><a href="/signup">Sign Up</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <a class="navbar-brand" href="/home">
+            <a class="navbar-brand" href="/">
             Social Flix
             <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
             </a>
@@ -29,11 +28,11 @@
 
 
   <div class="row">
-    <div ng-controller="MainController" class='col-sm-9 videoPlayer'>
+    <div class='col-sm-9 videoPlayer'>
 
         <br>
         <form id='urlID'>
-          <input class="form-control input-sm"  id='url' type="text" placeholder="url goes here" ng-model="url">
+          <input class="form-control input-sm"  id='url' type="text" placeholder="url goes here">
             <button class="btn btn-primary">Submit</button>
           </input>
         </form>
@@ -86,8 +85,6 @@
 
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-route.min.js"></script>
     <script src="app/app.js"></script>
     <script src='app/chat.js'></script>
 

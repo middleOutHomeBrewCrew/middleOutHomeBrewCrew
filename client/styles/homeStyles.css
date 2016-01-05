@@ -35,6 +35,7 @@ nav {
 
 #wall1h1 {
 	text-align: center;
+	font-family: verdana;
 	color: white;
 	background-color: #d9230f;
 	margin: 0;
@@ -50,4 +51,10 @@ nav {
 #demo {
 	width: 700px;
 	height: 420px;
+}
+
+#wallInfo {
+	width: 500px;
+	height: 300px;
+	margin-top: 50%;
 }

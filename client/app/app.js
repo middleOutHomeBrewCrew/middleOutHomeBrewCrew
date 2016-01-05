@@ -1,20 +1,27 @@
-var app = angular.module("MainApp", ['ngRoute']);
-// Youtube API
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-app.controller("MainController", function($scope, $sce){
-
-  $scope.playVideo = function() {
-    $scope.player.playVideo();
+function muteVideo() {
+  if(socket.player) {
+    socket.player.mute();
+    $('.mute').show();
   }
+}
 
-  $scope.pauseVideo = function() {
-    $scope.player.pauseVideo();
-  }
-  
+function unMuteVideo() {
+  if(socket.player) {
+    socket.player.unMute();
+    $('.mute').hide(); 
+  }  
+}
+
+$('#volume').change(function() {
+  var volVal = $('#volume').val();
+  // console.log(volVal, "volume value");
+  setVolume(volVal);
 });
 
-
+function setVolume(value) {
+  if(socket.player) {
+    socket.player.setVolume(value);
+    console.log(socket.player.B, "player");
+    console.log(socket.player.getVolume(), "yt volume");
+  }
+}

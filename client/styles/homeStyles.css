@@ -36,7 +36,7 @@ nav {
 #wall1h1 {
 	text-align: center;
 	color: white;
-	background-color: red;
+	background-color: #d9230f;
 	margin: 0;
 }
 
@@ -45,4 +45,23 @@ nav {
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-position: center;
+}
+
+#demo {
+	width: 700px;
+	height: 420px;
+}
+
+.info {
+    padding: 8%;
+    background-color: #ffffff;
+    margin: 5%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px gray;
+    border: 2px solid gray;
+    text-align: center;
+}
+
+#offer{
+  font-size: 15px;
 }

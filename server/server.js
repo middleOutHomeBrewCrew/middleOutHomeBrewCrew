@@ -3,6 +3,7 @@ var app = express();
 var socketServer = require('http').createServer(app);
 var io = require('socket.io')(socketServer);
 var path = require('path');
+var people = {};
 
 app.use(express.static(__dirname + './../client'));
 
@@ -22,7 +23,7 @@ app.get('/signup', function(req, res) {
     res.sendFile(path.join(__dirname + './../client/signup.html'));
 });
 
-socketServer.listen((process.env.PORT || 3000), function() {
+socketServer.listen((process.env.PORT || 4000), function() {
   var host = socketServer.address().address;
   var port = socketServer.address().port;
 
@@ -31,17 +32,38 @@ socketServer.listen((process.env.PORT || 3000), function() {
 
 // create socket.io connection
 io.on('connection', function(socket){
-  console.log('a user connected');
-  socket.on('disconnect', function(){
-    console.log('user disconnected');
+  //start video socket
+  io.emit('new connection')
+  socket.on('new connection res', function(obj){
+    io.emit('new connection res', obj);
   });
+  // register new user connect
+  socket.on('join', function(name) {
+    people[socket.id] = name;
+    socket.emit('update','You have connected to the server');
+    io.emit('update', name + ' has joined the server.');
+    io.emit('update-people', people);
+    console.log(people[socket.id] + ' has connected!');
+  });
+  
+  // log user message to chat
   socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
-    console.log('message: ' + msg);
+    io.emit('chat message', people[socket.id], msg);
+    console.log(people[socket.id] + ': ' + msg);
+  });
+
+  // log user disconnect to chat and update user list
+  socket.on('disconnect', function(){
+    var temp = people[socket.id];
+    
+    io.emit('update', temp + ' has left the server.');
+    delete people[socket.id];
+    io.emit('update-people',people);
+    console.log(temp + ' has disconnected!');
   });
   socket.on('url submit', function(url){
     io.emit('url submit', url);
-    console.log('url: server', url);
+    console.log(people[socket.id] + ' has submitted a URL: ', url);
   });
   socket.on('play video', function(){
     io.emit('play video')

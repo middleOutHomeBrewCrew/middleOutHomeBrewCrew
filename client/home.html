@@ -28,11 +28,11 @@
 
 
   <div class="row">
-    <div ng-controller="MainController" class='col-sm-9 videoPlayer'>
+    <div class='col-sm-9 videoPlayer'>
 
         <br>
         <form id='urlID'>
-          <input id='url' type="text" placeholder="url goes here" ng-model="url">
+          <input class="form-control input-sm"  id='url' type="text" placeholder="url goes here">
             <button class="btn btn-primary">Submit</button>
           </input>
         </form>
@@ -42,8 +42,8 @@
         <button id="playVid" onclick="playVideo();" class="btn btn-primary">Play Video</button>
         <button id="pauseVid" onclick="pauseVideo();" class="btn btn-primary">Pause Video</button>
         <button id="muteVid" onclick="muteVideo();" class="btn btn-primary">Mute Video</button>
-        <button id="unmuteVid" onclick="unMuteVideo();" class="btn btn-primary">UnMute Video</button>
-        <input id="volume" type="number" step="1" min="0" max="100" value="100">
+        <button id="unmuteVid" onclick="unMuteVideo();" class="btn btn-primary">Unmute Video</button>
+        <input id="volume" type="number" step="1" min="0" max="100" value="100" class="form-control input-sm">
         <img class="mute" id="muteImg" src='../assets/Mute.png'> 
       </div>
       <br>
@@ -61,11 +61,11 @@
       <h4><strong>Chatroom:</strong></h4>
     </div>
 
-      <div class="span5 offset2" id="login">
+      <div class="form-group" id="login">
         <form class="form-inline" id='joinChat'>
           <h4>Enter a username:</h4>
-          <input type="text" class="input-small" placeholder="Your name" id="name">
-          <input type="button" name="join" id="join" value="Join">
+          <input type="text" class="form-control" placeholder="Your name" id="name">
+          <input type="button" name="join" id="join" value="Join" class="btn btn-primary">
         </form>
       </div>
 
@@ -74,7 +74,7 @@
       </div>
 
       <form id='chatForm' action="">
-        <input class="long" id="m" autocomplete="off" />
+        <input id="m" autocomplete="off" class="form-control" />
         <button class="btn btn-primary long">Send</button>
       </form>
 
@@ -85,8 +85,6 @@
 
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-route.min.js"></script>
     <script src="app/app.js"></script>
     <script src='app/chat.js'></script>
 

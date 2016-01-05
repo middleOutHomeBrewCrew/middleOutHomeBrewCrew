@@ -51,3 +51,17 @@ nav {
 	width: 700px;
 	height: 420px;
 }
+
+.info {
+    padding: 8%;
+    background-color: #ffffff;
+    margin: 5%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px gray;
+    border: 2px solid gray;
+    text-align: center;
+}
+
+#offer{
+  font-size: 15px;
+}

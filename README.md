@@ -31,6 +31,7 @@
 - Express 4.13.x
 - Node 5.3.x
 - Socket.io 1.3.x
+- jQuery 1.4.x
 
 ## Usage ##
   >Fill in later

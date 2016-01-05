@@ -5,13 +5,13 @@
   "main": "server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node www/app.js"
+    "start": "node server/server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/middleOutHomeBrewCrew/middleOutHomeBrewCrew"
+    "url": "https://github.com/nodetojoy/middleOutHomeBrewCrew"
   },
-  "author": "tehhomebrew",
+  "author": "nodeToJoy",
   "license": "ISC",
   "dependencies": {
     "angular": "^1.4.8",

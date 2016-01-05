@@ -22,7 +22,6 @@ $('#url').val('');
 });
 
 // url Socket instantiate a youtube player for all
-//sockets to work on
 socket.on('url submit', function(url){
   var player = new YT.Player('player', {
     videoId : url.slice(32),
@@ -42,7 +41,6 @@ $('#playVid').on('click', function(){
 });
 socket.on('play video', function(){
   socket.player.playVideo();
-  console.log(socket.player.getCurrentTime(), socket.url);
 });
 
 //pause video event
@@ -53,6 +51,7 @@ socket.on('pause video', function(){
   socket.player.pauseVideo();
 });
 
+//allows for users to connect in the middle of a video 
 socket.on('new connection', function (){
   if(!socket.player){
     return;
@@ -107,9 +106,9 @@ $('#join').click(function() {
     $('#urlSub').prop('disabled',false);
   }
 });
-
+//on "Enter/Return" key press allows submitting a user name
 $('#name').keypress(function(e) {
-  if (e.which == 13) {
+  if (e.which == 13) { 
     var name = $('#name').val();
     if (name != '') {
       socket.emit('join', name);
@@ -151,7 +150,7 @@ socket.on('chat message', function(who,msg){
   }
 });
 
-// Autoscroll chat
+// Autoscroll chat box
 window.setInterval(function() {
   var elem = document.getElementById('messages');
   elem.scrollTop = elem.scrollHeight;

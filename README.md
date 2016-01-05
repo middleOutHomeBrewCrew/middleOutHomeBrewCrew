@@ -34,7 +34,7 @@
 - jQuery 1.4.x
 
 ## Usage ##
-  >Fill in later
+  >See demo [video](https://youtu.be/DbmwzENcivA)
 
 ## Contributing ##
 See [_CONTRIBUING.md](https://github.com/middleOutHomeBrewCrew/middleOutHomeBrewCrew/blob/master/_CONTRIBUTING.md) for contribution guidelines.

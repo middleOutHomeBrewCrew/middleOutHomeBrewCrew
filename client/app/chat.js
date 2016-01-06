@@ -22,19 +22,19 @@ $('#url').val('');
 });
 
 // url Socket instantiate a youtube player for all
-//sockets to work on
-socket.on('url submit', function(url){
-  var player = new YT.Player('player', {
-    videoId : url.slice(32),
-    playerVars: { 
-      'autoplay': 0, 
-      'controls': 0, 
-      'disablekb': 0
-    }
-  });
-  socket.player = player;
-  socket.url = url.slice(32,43);
-});
+// sockets to work on
+// socket.on('url submit', function(url){
+//   var player = new YT.Player('player', {
+//     videoId : url.slice(32),
+//     playerVars: { 
+//       'autoplay': 0, 
+//       'controls': 0, 
+//       'disablekb': 0
+//     }
+//   });
+//   socket.player = player;
+//   socket.url = url.slice(32,43);
+// });
 
 //play video event
 $('#playVid').on('click', function(){

@@ -62,6 +62,7 @@ io.on('connection', function(socket){
     console.log(temp + ' has disconnected!');
   });
   socket.on('url submit', function(url){
+    
     io.emit('url submit', url);
     console.log(people[socket.id] + ' has submitted a URL: ', url);
   });

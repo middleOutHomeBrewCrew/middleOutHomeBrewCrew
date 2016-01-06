@@ -27,14 +27,23 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-
   <div class="row">
-    <div ng-controller="MainController" class='col-sm-9 videoPlayer'>
+    <!-- search queries container -->
+    <div class="col-sm-3">
+      <div style="height: 400px; width: 80%; margin-left: 10%; border: 1px solid #a91b0c; background-color: #fff; margin-top: 100px;">
+        <h3 style="text-align: center;">Search Results:</h3>
+          <div  style="height: 80%; margin: 10px; padding: 10px; overflow: scroll;">
+            <ul id="results">
+            </ul>
+          </div>
+      </div>
+    </div>
+    <div ng-controller="MainController" class='col-sm-6 videoPlayer'>
 
         <br>
         <form id='urlID'>
           <input id='url' type="text" placeholder="url goes here" ng-model="url">
-            <button class="btn btn-primary">Submit</button>
+            <button id="search-btn" class="btn btn-primary">Search</button>
           </input>
         </form>
 
@@ -88,6 +97,7 @@
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-route.min.js"></script>
+    <script src="env/config.js"></script>
     <script src="app/app.js"></script>
     <script src='app/chat.js'></script>
 

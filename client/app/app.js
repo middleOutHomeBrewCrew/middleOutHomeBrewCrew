@@ -21,19 +21,14 @@ function youtubeSearch(searchItem) {
 
 // create song list from youtube search 
 function appendVideoImage (videoId, videoImage) {
-  $('#results').append('<p id="' + videoId + '"><img src="' + videoImage +'" height="70"></p>'); 
+  $('.results').append('<p id="' + videoId + '"><img src="' + videoImage +'" height="70"></p>'); 
 }
 
 // search youtube button
 $('#search-btn').on('click', function(event) {
-  var searchVal = $('input').val();
+  var searchVal = $('#youTubeSearchInput').val();
   youtubeSearch(searchVal);
 });
-
-// function videoUrl (vidId) {
-//   var videoUrlVaL = ('https://www.youtube.com/watch?v=' + vidId);
-
-// }
 
 // Movie Button Controls
 function muteVideo() {

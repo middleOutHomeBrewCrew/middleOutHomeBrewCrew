@@ -6,10 +6,9 @@
   </head>
 
   <body id='indexBody'>
-  <!-- navbar -->
+    <!-- navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top" style='margin: 0'>
       <div class="container-fluid">
-
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -27,49 +26,50 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-  <div class="row">
-    <!-- search queries container -->
-    <div class="col-sm-3">
-      <div style="height: 400px; width: 80%; margin-left: 10%; border: 1px solid #a91b0c; background-color: #fff; margin-top: 100px;">
-        <h3 style="text-align: center;">Search Results:</h3>
-          <div  style="height: 80%; margin: 10px; padding: 10px; overflow: scroll;">
-            <ul id="results">
-            </ul>
-          </div>
-      </div>
-    </div>
-    <div ng-controller="MainController" class='col-sm-6 videoPlayer'>
+    <div class="row">
+      <!-- search queries container -->
+      <div class="col-sm-3">
+        <div style="height: 400px; width: 80%; margin-left: 10%; border: 1px solid #a91b0c; background-color: #fff; margin-top: 100px;">
 
+          <h3 style="text-align: center;">Search Results:</h3>
+            <form id='urlID'>
+              <div  style="height: 80%; margin: 10px; padding: 10px; overflow: scroll;">
+                <ul class="results">
+                </ul>
+              </div>
+            </form>
+        </div>
+      </div>
+
+      <div class='col-sm-6 videoPlayer'>
         <br>
-        <form id='urlID'>
-          <input id='url' type="text" placeholder="url goes here" ng-model="url">
+          <input id='youTubeSearchInput' type="text" placeholder="url goes here">
             <button id="search-btn" class="btn btn-primary">Search</button>
           </input>
-        </form>
 
-      <!-- Control Buttons -->
-      <div id='playerControls'>
-        <button id="playVid" onclick="playVideo();" class="btn btn-primary">Play Video</button>
-        <button id="pauseVid" onclick="pauseVideo();" class="btn btn-primary">Pause Video</button>
-        <button id="muteVid" onclick="muteVideo();" class="btn btn-primary">Mute Video</button>
-        <button id="unmuteVid" onclick="unMuteVideo();" class="btn btn-primary">UnMute Video</button>
-        <input id="volume" type="number" step="1" min="0" max="100" value="100">
-        <img class="mute" id="muteImg" src='../assets/Mute.png'> 
+        <!-- Control Buttons -->
+        <div id='playerControls'>
+          <button id="playVid" onclick="playVideo();" class="btn btn-primary">Play Video</button>
+          <button id="pauseVid" onclick="pauseVideo();" class="btn btn-primary">Pause Video</button>
+          <button id="muteVid" onclick="muteVideo();" class="btn btn-primary">Mute Video</button>
+          <button id="unmuteVid" onclick="unMuteVideo();" class="btn btn-primary">UnMute Video</button>
+          <input id="volume" type="number" step="1" min="0" max="100" value="100">
+          <img class="mute" id="muteImg" src='../assets/Mute.png'> 
+        </div>
+        <br>
+        <br>
+        <!-- YT API player -->
+        <div class='youtube-player'id='player'></div>
       </div>
-      <br>
-      <br>
-      <!-- YT API player -->
-      <div class='youtube-player'id='player'></div>
-    </div>
 
-    <!-- message container -->
-    <div id='messageDiv' class="col-sm-3">
+      <!-- message container -->
+      <div id='messageDiv' class="col-sm-3">
 
-    <div id='room'>
-      <h4>Users:</h4>
-      <ul id="people" class="unstyled"></ul>
-      <h4><strong>Chatroom:</strong></h4>
-    </div>
+      <div id='room'>
+        <h4>Users:</h4>
+        <ul id="people" class="unstyled"></ul>
+        <h4><strong>Chatroom:</strong></h4>
+      </div>
 
       <div class="span5 offset2" id="login">
         <form class="form-inline" id='joinChat'>
@@ -88,9 +88,8 @@
         <button class="btn btn-primary long">Send</button>
       </form>
 
-    </div> <!-- message div -->
-
-  </div> <!-- row -->
+      </div> <!-- message div -->
+    </div> <!-- row -->
 
 
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>

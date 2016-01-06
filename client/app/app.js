@@ -1,3 +1,41 @@
+// Video search results from youtube stores from GET request
+var queryResults = [];
+
+function youtubeSearch(searchItem) {
+  $.get(
+    "https://www.googleapis.com/youtube/v3/search",{
+    part : 'snippet',
+    maxResults : 10,
+    q: searchItem,
+    key: API_KEY },
+    function(data) {
+      $.each( data.items, function(i, item ) { 
+        queryResults.push(item);
+        var vidId = item.id.videoId;
+        var vidImage = item.snippet.thumbnails.medium.url; 
+        appendVideoImage(vidId, vidImage);
+      });
+    }
+  );
+}
+
+// create song list from youtube search 
+function appendVideoImage (videoId, videoImage) {
+  $('#results').append('<p id="' + videoId + '"><img src="' + videoImage +'" height="70"></p>'); 
+}
+
+// search youtube button
+$('#search-btn').on('click', function(event) {
+  var searchVal = $('input').val();
+  youtubeSearch(searchVal);
+});
+
+// function videoUrl (vidId) {
+//   var videoUrlVaL = ('https://www.youtube.com/watch?v=' + vidId);
+
+// }
+
+// Movie Button Controls
 function muteVideo() {
   if(socket.player) {
     socket.player.mute();

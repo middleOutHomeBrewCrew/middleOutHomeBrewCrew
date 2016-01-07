@@ -7,7 +7,7 @@ function youtubeSearch(searchItem) {
     part : 'snippet',
     maxResults : 10,
     q: searchItem,
-    key: YOUTUBE_API_KEY || process.env.YOUTUBE_API_KEY },
+    key: process.env.YOUTUBE_API_KEY || YOUTUBE_API_KEY },
     function(data) {
       $.each( data.items, function(i, item ) { 
         queryResults.push(item);
@@ -18,6 +18,7 @@ function youtubeSearch(searchItem) {
     }
   );
 }
+console.log('YOUTUBE: ', process.env.YOUTUBE_API_KEY);
 
 // create song list from youtube search 
 function appendVideoImage (videoId, videoImage) {

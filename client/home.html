@@ -29,23 +29,25 @@
     <div class="row">
       <!-- search queries container -->
       <div class="col-sm-3">
-        <div style="height: 400px; width: 80%; margin-left: 10%; border: 1px solid #a91b0c; background-color: #fff; margin-top: 100px;">
-
+        <div id="search-results-container">
           <h3 style="text-align: center;">Search Results:</h3>
-            <form id='urlID'>
-              <div  style="height: 80%; margin: 10px; padding: 10px; overflow: scroll;">
-                <ul class="results">
-                </ul>
-              </div>
-            </form>
+          <form id='urlID'>
+            <div id="search-results">
+            </div>
+          </form>
+          <button id="clear-search-btn" class="btn btn-primary">Clear Search</button>
         </div>
       </div>
 
       <div class='col-sm-6 videoPlayer'>
         <br>
-          <input id='youTubeSearchInput' type="text" placeholder="Search Youtube Videos...">
-            <button id="search-btn" class="btn btn-primary">Search</button>
-          </input>
+        <input id='youTubeSearchInput' type="text" placeholder="Search Youtube Videos...">
+          <button id="search-btn" class="btn btn-primary">Search</button>
+        </input>
+                <!-- YT API player -->
+        <div id="youtube-player-container">
+          <div class='youtube-player'id='player'></div>
+        </div>
 
         <!-- Control Buttons -->
         <div id='playerControls'>
@@ -56,10 +58,9 @@
           <input id="volume" type="number" step="1" min="0" max="100" value="100">
           <img class="mute" id="muteImg" src='../assets/Mute.png'> 
         </div>
+
         <br>
-        <br>
-        <!-- YT API player -->
-        <div class='youtube-player'id='player'></div>
+
       </div>
 
       <!-- message container -->

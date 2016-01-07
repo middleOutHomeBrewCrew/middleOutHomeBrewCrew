@@ -16,8 +16,6 @@
 	width: 100%;
 	max-height: 75%;
 	min-height: 75%;
-	/*We just want a max height specified*/
-	/*This is so the messages start internal scrolling*/
 	overflow: auto;
 	float: right;
 }
@@ -44,6 +42,12 @@
     display: block;
 }
 
+#youtube-player-container {
+	height: 70%
+	width: 90%;
+	background-color: green;
+}
+
 .videoPlayer {
 	padding: 5%;
 }
@@ -53,8 +57,28 @@
 
 #youtubeSearchInput {
 	width: 400px;
-  height: 30px;
+  height: 35px;
   margin-bottom: 20px;
+}
+
+#search-results-container {
+	height: 500px;
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 90px;
+	background-color: #fff;
+	border: 1px solid #a91b0c;
+}
+
+#search-results {
+	height: 75%; 
+	overflow: scroll;
+  margin-left: 25%;
+}
+
+#clear-search-btn {
+	margin-left: 30%;
+  margin-top: 6%;
 }
 
     /* For mobile phones: */

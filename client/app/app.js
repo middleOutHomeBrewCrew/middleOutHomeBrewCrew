@@ -1,4 +1,9 @@
 // Video search results from youtube stores from GET request
+$(function() {
+  $('a[rel=tipsy]').tipsy({fade: true, gravity: 'n'});
+});
+
+
 var queryResults = [];
 
 function youtubeSearch(searchItem) {
@@ -13,16 +18,19 @@ function youtubeSearch(searchItem) {
         queryResults.push(item);
         var vidId = item.id.videoId;
         var vidImage = item.snippet.thumbnails.medium.url; 
-        appendVideoImage(vidId, vidImage);
+        var vidDescription = ''+item.snippet.description.slice(0, 30)+'..';
+        appendVideoImage(vidId, vidImage, vidDescription);
       });
     }
   );
 }
 
 // create song list from youtube search 
-function appendVideoImage (videoId, videoImage) {
-  $('.results').append('<p id="' + videoId + '"><img src="' + videoImage +'" height="70"></p>'); 
+function appendVideoImage (videoId, videoImage, vidDescription) {
+  $('.results').append('<p id="' + videoId + '" original-title="'+vidDescription+'"><img src="' + videoImage +'" height="70"></p>');
+  $('#'+videoId).tipsy();
 }
+
 
 // search youtube button
 $('#search-btn').on('click', function(event) {

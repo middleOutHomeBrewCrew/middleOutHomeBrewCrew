@@ -1,32 +1,24 @@
-// Video search results from youtube stores from GET request
 $(function() {
   $('a[rel=tipsy]').tipsy({fade: true, gravity: 'n'});
 });
 
-
-var queryResults = [];
-
 function youtubeSearch(searchItem) {
-  $.get(
-    "../server/server.js",{
-    part : 'snippet',
-    maxResults : 10,
-    q: searchItem,
-    key: API_KEY },
-    function(data) {
+  $.ajax({
+    'url': "/searchYoutube",
+    'type': 'GET',
+    'data': {'searchItem': searchItem},
+    }).done( function(data) {
       $.each( data.items, function(i, item ) { 
-        queryResults.push(item);
         var vidId = item.id.videoId;
         var vidImage = item.snippet.thumbnails.medium.url; 
         var vidDescription = ''+item.snippet.description.slice(0, 30)+'..';
         appendVideoImage(vidId, vidImage, vidDescription);
       });
-    }
-  );
+    })
 }
 
 // append youtube song list to left-side container 
-function appendVideoImage (videoId, videoImage) {
+function appendVideoImage (videoId, videoImage, vidDescription) {
   $('#search-results').append('<p id="' + videoId + '" original-title="'+vidDescription+'"><img src="' + videoImage +'" height="70"></p>'); 
   $('#'+videoId).tipsy();
 }
@@ -41,7 +33,6 @@ $('#search-btn').on('click', function(event) {
 $('#clear-search-btn').on('click', function() {
   $('#search-results').empty();
 })
-
 
 // Movie Button Controls
 function muteVideo() {

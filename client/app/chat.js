@@ -14,7 +14,7 @@ $('#playerControls').hide();
 $('#url').prop('disabled',true);
 $('#urlSub').prop('disabled',true);
 
-$('.results').click(function(event){
+$('#search-results').click(function(event){
   var idVal = $(event.target).parent().attr('id');
   console.log('this is the click: ', idVal);
   socket.emit('url submit', idVal);

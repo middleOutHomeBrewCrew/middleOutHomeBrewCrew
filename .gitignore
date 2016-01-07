@@ -3,4 +3,4 @@ client/node_modules/*
 node_modules/*
 
 ## API keys
-client/env/config.js
+client/env/*

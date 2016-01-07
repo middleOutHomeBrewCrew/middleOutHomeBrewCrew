@@ -7,7 +7,7 @@ function youtubeSearch(searchItem) {
     part : 'snippet',
     maxResults : 10,
     q: searchItem,
-    key: API_KEY },
+    key: process.env.YOUTUBE_APU_KEY || YOUTUBE_API_KEY },
     function(data) {
       $.each( data.items, function(i, item ) { 
         queryResults.push(item);

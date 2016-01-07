@@ -1,5 +1,3 @@
-
-*/
 #m {
 	width: 100%;
 	height: 100%;
@@ -37,10 +35,8 @@
 	height: 100%;
 }
 
-
 * {
-    box-sizing: border-box;
-
+  box-sizing: border-box;
 }
 
 .row:after {
@@ -54,6 +50,12 @@
 }
 .long{
 	width: 100%;
+}
+
+#youtubeSearchInput {
+	width: 400px;
+  height: 30px;
+  margin-bottom: 20px;
 }
 
     /* For mobile phones: */

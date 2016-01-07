@@ -18,7 +18,6 @@ function youtubeSearch(searchItem) {
     }
   );
 }
-console.log('YOUTUBE: ', process.env.YOUTUBE_API_KEY);
 
 // create song list from youtube search 
 function appendVideoImage (videoId, videoImage) {

@@ -2,21 +2,20 @@
 var queryResults = [];
 
 function youtubeSearch(searchItem) {
-  $.get(
-    "../server/server.js",{
-    part : 'snippet',
-    maxResults : 10,
-    q: searchItem,
-    key: YOUTUBE_API_KEY },
-    function(data) {
+  $.ajax({
+    'url': "/searchYoutube",
+    'type': 'GET',
+    'data': {'searchItem': searchItem},
+    }).done( function(data) {
       $.each( data.items, function(i, item ) { 
         queryResults.push(item);
         var vidId = item.id.videoId;
         var vidImage = item.snippet.thumbnails.medium.url; 
         appendVideoImage(vidId, vidImage);
       });
-    }
-  );
+      console.log(data.items);
+      console.log('This is the data from server: ', data);
+    })
 }
 
 // append youtube song list to left-side container 

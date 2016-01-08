@@ -1,5 +1,5 @@
 <html >
-	<head>
+  <head>
     <link rel="stylesheet" type="text/css" href="https://bootswatch.com/simplex/bootstrap.min.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/appStyle.css">
@@ -40,14 +40,17 @@
         </div>
       </div>
 
-      <div class='col-sm-6 videoPlayer'>
-        <br>
-        <input id='youTubeSearchInput' type="text" placeholder="Search Youtube Videos...">
-          <button id="search-btn" class="btn btn-primary">Search</button>
-        </input>
-                <!-- YT API player -->
-        <div id="youtube-player-container">
-          <div class='youtube-player'id='player'></div>
+      <div class='col-sm-6'>
+        <div id="search-input-container">
+          <input id='youTubeSearchInput' type="text" placeholder="Search Youtube Videos...">
+            <button id="search-btn" class="btn btn-primary">Search</button>
+          </input>
+        </div>        
+        <!-- YT API player -->
+        <div class="videoPlayer">
+          <div class='youtube-player'id='player'>
+          <!-- YT API player -->
+          </div>
         </div>
 
         <!-- Control Buttons -->

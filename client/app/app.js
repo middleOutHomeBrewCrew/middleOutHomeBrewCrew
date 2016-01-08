@@ -14,11 +14,11 @@ function youtubeSearch(searchItem) {
         var vidDescription = ''+item.snippet.description.slice(0, 30)+'..';
         appendVideoImage(vidId, vidImage, vidDescription);
       });
-    })
+    });
 }
 
 // append youtube song list to left-side container 
-function appendVideoImage (videoId, videoImage, vidDescription) {
+function appendVideoImage(videoId, videoImage, vidDescription) {
   $('#search-results').append('<p id="' + videoId + '" original-title="'+vidDescription+'"><img src="' + videoImage +'" height="70"></p>'); 
   $('#'+videoId).tipsy();
 }
@@ -32,7 +32,7 @@ $('#search-btn').on('click', function(event) {
 // delete current youtube song list 
 $('#clear-search-btn').on('click', function() {
   $('#search-results').empty();
-})
+});
 
 // Movie Button Controls
 function muteVideo() {

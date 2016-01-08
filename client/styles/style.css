@@ -1,90 +1,98 @@
 #m {
-	width: 100%;
+    width: 100%;
 }
 
 #room {
-	color: #000000;
-	font-family: verdana;
+    color: #000000 ;
+    font-family: verdana;
 }
 
 #messages {
-	list-style-type: none;
-	color: #000000;
-	font-family: verdana;
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	max-height: 75%;
-	min-height: 75%;
-	overflow: auto;
-	float: right;
+    list-style-type: none;
+    color: #000000 ;
+    font-family: verdana;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-height: 75%;
+    min-height: 75%;
+    overflow: auto;
+    float: right;
 }
 #messages li {
-	padding: 5px 10px;
+    padding: 5px 10px;
 }
 #messages li:nth-child(odd) {
-	background: #FAEBD7;
+    background: #FAEBD7 ;
 }
 
 #messageDiv {
-	border-left: 1px solid black;
-	padding: 5%;
-	height: 100%;
+    border-left: 1px solid black;
+    padding: 5%;
+    height: 100%;
 }
 
 * {
-  box-sizing: border-box;
+ box-sizing: border-box;
 }
 
 .row:after {
-    content: "";
-    clear: both;
-    display: block;
-}
-
-#youtube-player-container {
-	height: 70%
-	width: 90%;
-	background-color: green;
+   content: "";
+   clear: both;
+   display: block;
 }
 
 .videoPlayer {
-	padding: 5%;
+    width: 95.7%;
+ height: 360px;
+ margin-top: 10px;
+ margin-bottom: 5px;
+    background-color: black;
 }
+
 .long{
-	width: 100%;
+    width: 100%;
+}
+
+#search-input-container {
+    height: 50px;
+    width: 95.7%;
+ padding-left: 10px;
+ padding-right: 10px;
+ padding-top: 10px;
+ margin-top: 10%;
+ background-color: #fff;
+ border: 1px solid #a91b0c ;
 }
 
 #youtubeSearchInput {
-	width: 400px;
-  height: 35px;
-  margin-bottom: 20px;
+    width: 75%;
+ height: 30px;
 }
 
 #search-results-container {
-	height: 500px;
-	width: 80%;
-	margin-left: 10%;
-	margin-top: 90px;
-	background-color: #fff;
-	border: 1px solid #a91b0c;
+    height: 500px;
+ width: 80%;
+ margin-left: 10%;
+ margin-top: 20%;
+    background-color: #fff;
+    border: 1px solid #a91b0c ;
 }
 
 #search-results {
-	height: 75%; 
-	overflow: scroll;
-  margin-left: 25%;
+    height: 75%; 
+    overflow: scroll;
+ margin-left: 25%;
 }
 
 #clear-search-btn {
-	margin-left: 30%;
-  margin-top: 6%;
+    margin-left: 30%;
+ margin-top: 6%;
 }
 
-    /* For mobile phones: */
+   /* For mobile phones: */
 @media only screen and (max-width: 900px) {
-    [class*="col-"] {
-        width: 100%;
-    }
+   [class*="col-"] {
+       width: 100%;
+   }
 }
-

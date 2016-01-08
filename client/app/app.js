@@ -1,42 +1,38 @@
-// Video search results from youtube stores from GET request
 $(function() {
   $('a[rel=tipsy]').tipsy({fade: true, gravity: 'n'});
 });
 
-
-var queryResults = [];
-
 function youtubeSearch(searchItem) {
-  $.get(
-    "https://www.googleapis.com/youtube/v3/search",{
-    part : 'snippet',
-    maxResults : 10,
-    q: searchItem,
-    key: API_KEY },
-    function(data) {
+  $.ajax({
+    'url': "/searchYoutube",
+    'type': 'GET',
+    'data': {'searchItem': searchItem},
+    }).done( function(data) {
       $.each( data.items, function(i, item ) { 
-        queryResults.push(item);
         var vidId = item.id.videoId;
         var vidImage = item.snippet.thumbnails.medium.url; 
         var vidDescription = ''+item.snippet.description.slice(0, 30)+'..';
         appendVideoImage(vidId, vidImage, vidDescription);
       });
-    }
-  );
+    })
 }
 
-// create song list from youtube search 
+// append youtube song list to left-side container 
 function appendVideoImage (videoId, videoImage, vidDescription) {
-  $('.results').append('<p id="' + videoId + '" original-title="'+vidDescription+'"><img src="' + videoImage +'" height="70"></p>');
+  $('#search-results').append('<p id="' + videoId + '" original-title="'+vidDescription+'"><img src="' + videoImage +'" height="70"></p>'); 
   $('#'+videoId).tipsy();
 }
-
 
 // search youtube button
 $('#search-btn').on('click', function(event) {
   var searchVal = $('#youTubeSearchInput').val();
   youtubeSearch(searchVal);
 });
+
+// delete current youtube song list 
+$('#clear-search-btn').on('click', function() {
+  $('#search-results').empty();
+})
 
 // Movie Button Controls
 function muteVideo() {

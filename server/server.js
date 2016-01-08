@@ -1,9 +1,13 @@
 var express = require('express');
 var app = express();
-var socketServer = require('http').createServer(app);
+var http = require('http').createServer(app);
+var socketServer = http;
 var io = require('socket.io')(socketServer);
 var path = require('path');
 var people = {};
+var YouTube = require('youtube-node');
+var youTube = new YouTube();
+var config = require('./env/config.js');
 
 app.use(express.static(__dirname + './../client'));
 
@@ -21,6 +25,22 @@ app.get('/login', function(req, res) {
 
 app.get('/signup', function(req, res) {
     res.sendFile(path.join(__dirname + './../client/signup.html'));
+});
+
+// youtube api get request using youtube-node
+app.get('/searchYoutube', function(req, res) {
+  console.log('this is the api key: ', config.YOUTUBE_API_KEY);
+  youTube.setKey(process.env.YOUTUBE_API_KEY || config.YOUTUBE_API_KEY);
+  console.log('this is the req.query: ', req.query.searchItem);
+
+  youTube.search(req.query.searchItem, 10, function(error, result) {
+    if (error) {
+      console.log(error);
+    }
+    else {
+      res.send(result);
+    }
+  });
 });
 
 socketServer.listen((process.env.PORT || 4000), function() {
@@ -73,5 +93,6 @@ io.on('connection', function(socket){
     io.emit('pause video')
   });
 });
+
 
 

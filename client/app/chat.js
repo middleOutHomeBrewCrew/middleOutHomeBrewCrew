@@ -21,6 +21,8 @@ $('#search-results').click(function(event){
 });
 
 socket.on('url submit', function(url){
+  $('#player').remove();
+  $('.videoPlayer').append('<div id="player">');
   var player = new YT.Player('player', {
     videoId : url,
     playerVars: { 
@@ -31,6 +33,7 @@ socket.on('url submit', function(url){
   });
   socket.player = player;
   socket.url = url;
+  console.log(player);
 });
 
 //play video event

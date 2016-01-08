@@ -1,15 +1,15 @@
 <html >
-	<head>
+  <head>
     <link rel="stylesheet" type="text/css" href="https://bootswatch.com/simplex/bootstrap.min.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/appStyle.css">
+    <link rel="stylesheet" href="./lib/stylesheets/tipsy.css">
   </head>
 
   <body id='indexBody'>
-  <!-- navbar -->
+    <!-- navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top" style='margin: 0'>
       <div class="container-fluid">
-
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -27,40 +27,54 @@
       </div><!-- /.container-fluid -->
     </nav>
 
+    <div class="row">
+      <!-- search queries container -->
+      <div class="col-sm-3">
+        <div id="search-results-container">
+          <h3 style="text-align: center;">Search Results:</h3>
+          <form id='urlID'>
+            <div id="search-results">
+            </div>
+          </form>
+          <button id="clear-search-btn" class="btn btn-primary">Clear Search</button>
+        </div>
+      </div>
 
-  <div class="row">
-    <div ng-controller="MainController" class='col-sm-9 videoPlayer'>
+      <div class='col-sm-6'>
+        <div id="search-input-container">
+          <input id='youTubeSearchInput' type="text" placeholder="Search Youtube Videos...">
+            <button id="search-btn" class="btn btn-primary">Search</button>
+          </input>
+        </div>        
+        <!-- YT API player -->
+        <div class="videoPlayer">
+          <div class='youtube-player'id='player'>
+          <!-- YT API player -->
+          </div>
+        </div>
+
+        <!-- Control Buttons -->
+        <div id='playerControls'>
+          <button id="playVid" onclick="playVideo();" class="btn btn-primary">Play Video</button>
+          <button id="pauseVid" onclick="pauseVideo();" class="btn btn-primary">Pause Video</button>
+          <button id="muteVid" onclick="muteVideo();" class="btn btn-primary">Mute Video</button>
+          <button id="unmuteVid" onclick="unMuteVideo();" class="btn btn-primary">UnMute Video</button>
+          <input id="volume" type="number" step="1" min="0" max="100" value="100">
+          <img class="mute" id="muteImg" src='../assets/Mute.png'> 
+        </div>
 
         <br>
-        <form id='urlID'>
-          <input id='url' type="text" placeholder="url goes here" ng-model="url">
-            <button class="btn btn-primary">Submit</button>
-          </input>
-        </form>
 
-      <!-- Control Buttons -->
-      <div id='playerControls'>
-        <button id="playVid" onclick="playVideo();" class="btn btn-primary">Play Video</button>
-        <button id="pauseVid" onclick="pauseVideo();" class="btn btn-primary">Pause Video</button>
-        <button id="muteVid" onclick="muteVideo();" class="btn btn-primary">Mute Video</button>
-        <button id="unmuteVid" onclick="unMuteVideo();" class="btn btn-primary">UnMute Video</button>
-        <input id="volume" type="number" step="1" min="0" max="100" value="100">
-        <img class="mute" id="muteImg" src='../assets/Mute.png'> 
       </div>
-      <br>
-      <br>
-      <!-- YT API player -->
-      <div class='youtube-player'id='player'></div>
-    </div>
 
-    <!-- message container -->
-    <div id='messageDiv' class="col-sm-3">
+      <!-- message container -->
+      <div id='messageDiv' class="col-sm-3">
 
-    <div id='room'>
-      <h4>Users:</h4>
-      <ul id="people" class="unstyled"></ul>
-      <h4><strong>Chatroom:</strong></h4>
-    </div>
+      <div id='room'>
+        <h4>Users:</h4>
+        <ul id="people" class="unstyled"></ul>
+        <h4><strong>Chatroom:</strong></h4>
+      </div>
 
       <div class="span5 offset2" id="login">
         <form class="form-inline" id='joinChat'>
@@ -79,15 +93,16 @@
         <button class="btn btn-primary long">Send</button>
       </form>
 
-    </div> <!-- message div -->
-
-  </div> <!-- row -->
+      </div> <!-- message div -->
+    </div> <!-- row -->
 
 
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="./lib/javascripts/jquery.tipsy.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-route.min.js"></script>
+    <script src="env/config.js"></script>
     <script src="app/app.js"></script>
     <script src='app/chat.js'></script>
 

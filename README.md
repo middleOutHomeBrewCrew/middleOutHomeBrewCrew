@@ -1,10 +1,14 @@
 # Social Flix
-  Watch videos remotely with synchronicity. 
+  Watch videos together regardless of distance. 
+
+## Summary ##
+
+  Expand your living room by watching your favorite shows and movies with anyone you want, distance is not an issue. No more syncing shows on your own. Social flix does it for you.  **this started as an angular app, but has evolved out of neccessity to use mainly jquery for ease of consrtuction, there may be some left over angular functionality that is included but not used (vestigial) **
     
 ## Team ##
- - __Product Owner__: [Yale Yuen](https://github.com/Ycube)
- - __Scrum Master__: [Michael Berber](https://github.com/mickberber)
- - __Development Team Members__: [Anthony Bibbs](https://github.com/abibbs), [Sergey Piterman](https://github.com/spiterman)
+ - __Product Owner__: [Joe Lagasse](https://github.com/jlag34)
+ - __Scrum Master__: [Tyler Ferrier](https://github.com/tynino)
+ - __Development Team Members__: [Tim Steele](https://github.com/beresford211), [Robert Cardiff](https://github.com/rcardiff1)
 
 ## Table of Contents
 
@@ -14,18 +18,13 @@
 1. [Requirements](#requirements)
 1. [Contributing](#contributing)
 1. [Development](#development)
-  1. [Installing Dependencies](#installing-dependencies) 
+  a) [Installing Dependencies](#installing-dependencies) 
 1. [Files](#files)
-  1. index.html
-  1. home.html
-  1. chat.js
-  1. server.js
-  1. app.js
-
-
-## Summary ##
-
-  Expand your living room by watching your favorite shows and movies with anyone you want, distance is not an issue. No more syncing shows on your own. Social flix does it for you.  **this started as an angular app, but has evolved out of neccessity to use mainly jquery for ease of consrtuction, there may be some left over angular functionality that is included but not used (vestigial) **
+  a) index.html
+  b) home.html
+  c) chat.js
+  d) server.js
+  e) app.js
 
 ## Requirements ##
 - Express 4.13.x
@@ -46,7 +45,6 @@ See [_CONTRIBUING.md](https://github.com/middleOutHomeBrewCrew/middleOutHomeBrew
 From within the root directory:
 
 ```sh
-sudo npm install npm -g
 npm install
 ```
 
@@ -58,9 +56,7 @@ npm install
 
 ### home.html ###
 
-  Landing page for all users after progressing past index.html, correspon
-
-  ding styles can be found in style.css.  All logic for home.html is included in 'chat.js'.  Chat.js started out as the file for only chat logic, it included all of the logic for the sockets and included the youtube player init.  Chat.js can be thought of as 'socket.js'
+  Landing page for all users after progressing past index.html, corresponding styles can be found in style.css.  All logic for home.html is included in 'chat.js'.  Chat.js started out as the file for only chat logic, it included all of the logic for the sockets and included the youtube player init.  Chat.js can be thought of as 'socket.js'
 
 ### chat.js (socket.js) ###
 

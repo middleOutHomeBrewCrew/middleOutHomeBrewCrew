@@ -14,18 +14,17 @@ $('#playerControls').hide();
 $('#url').prop('disabled',true);
 $('#urlSub').prop('disabled',true);
 
-//url submit event, sends all sockets url to use
-$('#urlID').submit(function(){
-  socket.emit('url submit', $('#url').val());
-$('#url').val('');
-  return false;
+$('#search-results').click(function(event){
+  var idVal = $(event.target).parent().attr('id');
+  console.log('this is the click: ', idVal);
+  socket.emit('url submit', idVal);
 });
 
-// url Socket instantiate a youtube player for all
-//sockets to work on
 socket.on('url submit', function(url){
+  $('#player').remove();
+  $('.videoPlayer').append('<div id="player">');
   var player = new YT.Player('player', {
-    videoId : url.slice(32),
+    videoId : url,
     playerVars: { 
       'autoplay': 0, 
       'controls': 0, 
@@ -33,7 +32,8 @@ socket.on('url submit', function(url){
     }
   });
   socket.player = player;
-  socket.url = url.slice(32,43);
+  socket.url = url;
+  console.log(player);
 });
 
 //play video event

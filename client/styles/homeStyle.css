@@ -67,3 +67,8 @@
     }
 }
 
+#muteImg {
+ display: none; 
+ width: 20px;
+ height: 20px; 
+}

@@ -146,7 +146,7 @@ socket.on('update-people', function(people) {
 //on event, add messages to chat box
 socket.on('chat message', function(who,msg){
   if (ready) {
-    $('#messages').append($('<li>').html('<strong>' + who + ': ' + '</strong>' + msg));
+    $('#messages').prepend($('<li>').html('<strong>' + who + ': ' + '</strong>' + msg));
   }
 });
 

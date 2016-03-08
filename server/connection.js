@@ -1,9 +1,11 @@
 var people = {};
 
 module.exports = {
+  //emits new user has arrived
   newConnection: function(io) {
     io.emit('new connection');
   },
+  //current connections respond with video details
   ncresponse: function(io, socket) {
     socket.on('new connection res', function(obj){
       io.emit('new connection res', obj);

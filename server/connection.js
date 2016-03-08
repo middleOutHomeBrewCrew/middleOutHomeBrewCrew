@@ -18,22 +18,22 @@ module.exports = {
       console.log(people[socket.id] + ' has connected!');
     });
   },
+  disconnect: function(io, socket) {
+    // log user disconnect to chat and update user list
+    socket.on('disconnect', function(){
+      var temp = people[socket.id];
+      
+      io.emit('update', temp + ' has left the server.');
+      delete people[socket.id];
+      io.emit('update-people',people);
+      console.log(temp + ' has disconnected!');
+    });
+  },
   chatMessage: function(io, socket) {
       // log user message to chat
       socket.on('chat message', function(msg){
         io.emit('chat message', people[socket.id], msg);
         console.log(people[socket.id] + ': ' + msg);
-      });
-  },
-  disconnect: function(io, socket) {
-      // log user disconnect to chat and update user list
-      socket.on('disconnect', function(){
-        var temp = people[socket.id];
-        
-        io.emit('update', temp + ' has left the server.');
-        delete people[socket.id];
-        io.emit('update-people',people);
-        console.log(temp + ' has disconnected!');
       });
   },
   urlSubmit: function(io, socket) {

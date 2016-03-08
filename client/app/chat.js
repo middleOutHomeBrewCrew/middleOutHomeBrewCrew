@@ -149,9 +149,3 @@ socket.on('chat message', function(who,msg){
     $('#messages').prepend($('<li>').html('<strong>' + who + ': ' + '</strong>' + msg));
   }
 });
-
-// Autoscroll chat box
-window.setInterval(function() {
-  var elem = document.getElementById('messages');
-  elem.scrollTop = elem.scrollHeight;
-}, 5000);

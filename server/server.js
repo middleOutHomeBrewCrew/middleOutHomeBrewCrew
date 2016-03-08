@@ -2,26 +2,18 @@ var express = require('express');
 var app = express();
 var socketServer = require('http').createServer(app);
 var io = require('socket.io')(socketServer);
-var path = require('path');
 var people = {};
+var routes = require('./routes.js');
 
 app.use(express.static(__dirname + './../client'));
 
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'));
-});
+app.get('/', routes.index);
 
-app.get('/home', function(req, res) {
-    res.sendFile(path.join(__dirname + './../client/home.html'));
-});
+app.get('/home', routes.home);
 
-app.get('/login', function(req, res) {
-    res.sendFile(path.join(__dirname + './../client/login.html'));
-});
+app.get('/login', routes.login);
 
-app.get('/signup', function(req, res) {
-    res.sendFile(path.join(__dirname + './../client/signup.html'));
-});
+app.get('/signup', routes.signup);
 
 socketServer.listen((process.env.PORT || 4000), function() {
   var host = socketServer.address().address;

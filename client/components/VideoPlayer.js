@@ -1,7 +1,10 @@
 import React from 'react';
+import YouTube from 'react-youtube';
 
 const VideoPlayer = () => {
-  return (<div>Video Player will go here</div>)
+  return (<div>
+            <YouTube videoId={'dGiQaabX3_o'}/>
+          </div>)
 }
 
 export default VideoPlayer;

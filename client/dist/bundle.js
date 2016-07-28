@@ -21169,10 +21169,14 @@
 	  return _react2.default.createElement(_Message2.default, { user: data.user, text: data.text, time: data.time });
 	});
 
+	var style = {
+	  border: '2px solid black'
+	};
+
 	var ChatBox = function ChatBox() {
 	  return _react2.default.createElement(
 	    'div',
-	    null,
+	    { className: 'container-fluid', style: style },
 	    messages
 	  );
 	};
@@ -21202,20 +21206,20 @@
 
 	          return _react2.default.createElement(
 	                    'div',
-	                    null,
+	                    { className: 'row center' },
 	                    _react2.default.createElement(
 	                              'div',
-	                              null,
+	                              { className: 'col-xs-3' },
 	                              user
 	                    ),
 	                    _react2.default.createElement(
 	                              'div',
-	                              null,
+	                              { className: 'col-xs-3' },
 	                              text
 	                    ),
 	                    _react2.default.createElement(
 	                              'div',
-	                              null,
+	                              { className: 'col-xs-3' },
 	                              time
 	                    )
 	          );
@@ -21227,7 +21231,7 @@
 /* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -21241,9 +21245,21 @@
 
 	var Nav = function Nav() {
 	  return _react2.default.createElement(
-	    'div',
-	    null,
-	    'Nav Bar will go here'
+	    "nav",
+	    { className: "navbar navbar-default" },
+	    _react2.default.createElement(
+	      "div",
+	      { className: "container-fluid" },
+	      _react2.default.createElement(
+	        "div",
+	        { className: "navbar-header" },
+	        _react2.default.createElement(
+	          "a",
+	          { className: "navbar-brand", href: "#" },
+	          _react2.default.createElement("img", { alt: "Brand", src: "" })
+	        )
+	      )
+	    )
 	  );
 	};
 
@@ -21269,7 +21285,7 @@
 	  return _react2.default.createElement(
 	    'div',
 	    null,
-	    'Message list will go here'
+	    'Video Player will go here'
 	  );
 	};
 

@@ -8,9 +8,13 @@ let messages = dummyData.data.map(function(data) {
   return <Message user={data.user} text={data.text} time={data.time} />
 })
 
+let style = {
+  border: '2px solid black'
+}
+
 const ChatBox = () => {
   return (
-    <div>
+    <div className='container-fluid' style={style}>
       {messages}
     </div>
   )

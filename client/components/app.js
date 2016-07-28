@@ -7,8 +7,14 @@ import ChatBox from './ChatBox';
 const App = () => {
   return (<div>
             <Nav />
-            <VideoPlayer />
-            <ChatBox />
+            <div className='container-fluid'>
+              <div className='row'>
+              <VideoPlayer />
+              </div>
+              <div className='row'>
+              <ChatBox />
+              </div>
+            </div>
           </div>)
 }
 

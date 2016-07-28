@@ -21108,6 +21108,128 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
+	          value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Nav = __webpack_require__(176);
+
+	var _Nav2 = _interopRequireDefault(_Nav);
+
+	var _VideoPlayer = __webpack_require__(177);
+
+	var _VideoPlayer2 = _interopRequireDefault(_VideoPlayer);
+
+	var _ChatBox = __webpack_require__(174);
+
+	var _ChatBox2 = _interopRequireDefault(_ChatBox);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var App = function App() {
+	          return _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    _react2.default.createElement(_Nav2.default, null),
+	                    _react2.default.createElement(_VideoPlayer2.default, null),
+	                    _react2.default.createElement(_ChatBox2.default, null)
+	          );
+	};
+
+	exports.default = App;
+
+/***/ },
+/* 174 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Message = __webpack_require__(175);
+
+	var _Message2 = _interopRequireDefault(_Message);
+
+	var _dummyData = __webpack_require__(178);
+
+	var _dummyData2 = _interopRequireDefault(_dummyData);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var messages = _dummyData2.default.data.map(function (data) {
+	  return _react2.default.createElement(_Message2.default, { user: data.user, text: data.text, time: data.time });
+	});
+
+	var ChatBox = function ChatBox() {
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    messages
+	  );
+	};
+
+	exports.default = ChatBox;
+
+/***/ },
+/* 175 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	          value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Message = function Message(_ref) {
+	          var text = _ref.text;
+	          var user = _ref.user;
+	          var time = _ref.time;
+
+	          return _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    _react2.default.createElement(
+	                              'div',
+	                              null,
+	                              user
+	                    ),
+	                    _react2.default.createElement(
+	                              'div',
+	                              null,
+	                              text
+	                    ),
+	                    _react2.default.createElement(
+	                              'div',
+	                              null,
+	                              time
+	                    )
+	          );
+	};
+
+	exports.default = Message;
+
+/***/ },
+/* 176 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 
@@ -21117,15 +21239,51 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var App = function App() {
+	var Nav = function Nav() {
 	  return _react2.default.createElement(
 	    'div',
 	    null,
-	    'hello world'
+	    'Nav Bar will go here'
 	  );
 	};
 
-	exports.default = App;
+	exports.default = Nav;
+
+/***/ },
+/* 177 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var VideoPlayer = function VideoPlayer() {
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    'Message list will go here'
+	  );
+	};
+
+	exports.default = VideoPlayer;
+
+/***/ },
+/* 178 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	module.exports = {
+	  data: [{ user: '@schmidt', text: 'woot woot', time: '12:35' }, { user: '@jess', text: 'what it be girl', time: '12:34' }, { user: '@winston', text: 'oh you got jeans on baby', time: '12:33' }, { user: '@schmidt', text: 'everything allright?', time: '12:32' }, { user: '@cici', text: 'you keepin it tight', time: '12:31' }, { user: '@nick', text: 'test', time: '12:30' }, { user: '@jess', text: 'im watching new girl', time: '12:29' }, { user: '@winston', text: 'thats where this text came from ', time: '12:28' }]
+	};
 
 /***/ }
 /******/ ]);
